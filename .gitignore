@@ -32,14 +32,6 @@ Desktop.ini
 *.log
 logs/
 
-# Generated evaluation outputs
-SPARQLLM/evaluation_results/
-SPARQLLM/datasets/**/results/
-SPARQLLM/agent_runs.jsonl
-SPARQLLM/t2s_input.jsonl
-
-# Local/vector database artifacts
-SPARQLLM/data/vectordb/
 
 # Large model/checkpoint artifacts, if added later
 *.gguf
