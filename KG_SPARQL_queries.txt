@@ -1,0 +1,251 @@
+COMPETENCY QUESTIONS (NATURAL LANGUAGE) TO COMPETENCY QUERIES (SPARQL)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ1. 	Where are the main sports facilities located in Trentino?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id) 
+	?city ?address
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+ 	sft:has_city ?city ;
+  	sft:has_address ?address .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ2. 	What sports can be practiced at each sports facility?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id) 
+	(REPLACE(STR(?sport), "http://localhost:8080/source/Sport/","") AS ?sport_name) 
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_sport ?sport .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ3.	What is the capacity (number of seats) of each sports facility?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id) 
+	?capacity
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_capacity ?capacity .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ4.	Which sports facilities are currently open, closed, or undergoing renovation?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id) 
+	?status
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_status ?status .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ5.	Which sports facilities regularly host a specific team or association?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id) 
+	(REPLACE(STR(?association), "http://localhost:8080/source/Association/","") AS ?team)
+WHERE {
+   ?association a sft:association ;
+     	sft:has_sport ?sport .
+
+   {
+    	SELECT ?sport (MIN(?sport_facility) AS ?sport_facility)
+    	WHERE {
+      	   ?sport_facility a sft:sport_facility ;
+         	sft:has_sport ?sport .
+    	}
+    	GROUP BY ?sport
+   }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ6.	Which sports facilities require reservations?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)  
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_service ?service .
+    
+   FILTER (?service IN (
+  	<http://localhost:8080/source/Service/3>,
+  	<http://localhost:8080/source/Service/4>,
+  	<http://localhost:8080/source/Service/5>
+   ))
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ7.	Which sports facilities are accessible to people with disabilities?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_accessibility "yes" .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ8.	What additional services does a sports facility offer?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id) 
+	?name
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+    	sft:has_service ?service .
+    
+   ?service a sft:service ;
+   	sft:has_name ?name .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ9.	Which public transport options are available to reach a specific sports facility?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id) 
+	?code
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+    	sft:has_meanOfTransport ?mean_of_transport .
+
+   ?mean_of_transport  a sft:mean_of_transport ;
+   	sft:has_code ?code .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ10.	What is the closest public transport stop to a sports facility?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	(REPLACE(STR(?stop), "http://localhost:8080/source/Stop/","") AS ?stop_id)
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_stop ?stop .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ11.	What is the average travel time by public transport to a facility?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id) 
+	(AVG(?time) AS ?avg_time)
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+     	sft:has_meanOfTransport ?mean_of_transport .
+
+   ?route a sft:route ;
+     	sft:has_meanOfTransport ?mean_of_transport ;
+     	sft:has_time ?time .
+}
+GROUP BY ?sport_facility
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ12.	Are there bike paths connecting a sports facility to the rest of the city?
+
+SELECT DISTINCT 
+(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?idFacility) 
+(REPLACE(STR(?path), "http://localhost:8080/source/Path/","") AS ?idPath)
+WHERE
+{ 
+   ?sport_facility a sft:sport_facility ;
+     	sft:has_meanOfTransport ?mean_of_transport .
+
+   ?route a sft:route ;
+     	sft:has_meanOfTransport ?mean_of_transport .
+
+   ?path a sft:path ;
+     	sft:has_route ?route ;
+     	sft:has_type "bike line" .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ13.	Which sports facilities are located near a specific urban area?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id) 
+	?address
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_address ?address .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ14.	How can I travel from my town to a ski resort using public transportation?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id) 
+	?code
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_sport <http://localhost:8080/source/Sport/sci> ;
+	sft:has_meanOfTransport ?mean_of_transport .
+
+   ?mean_of_transport  a sft:mean_of_transport ;
+   	sft:has_code ?code .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ15. Which sports venues are accessible by bike or on foot?
+
+SELECT 
+	(REPLACE(STR(?path), "http://localhost:8080/source/Path/","") AS ?id) 
+	?description
+WHERE {
+   ?path sft:has_type "a raso" ;
+   	sft:has_description ?description .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ16. Are there any sports facilities that are difficult to access due to limited transportation?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_walkby 0 .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+CQ17. What are the opening and closing times of sports facilities?
+
+SELECT 
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id) 
+	?timetable
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_timetable ?timetable .
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 

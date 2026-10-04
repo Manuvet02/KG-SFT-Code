@@ -1,0 +1,29 @@
+# Core
+python-dotenv
+pydantic
+fastapi
+uvicorn
+
+# RDF / Knowledge Graph
+rdflib
+owlrl
+SPARQLWrapper
+
+# LLM / Agents
+langchain
+langchain-community
+langchain-openai
+smolagents
+
+# MCP
+mcp
+
+# HTTP
+httpx
+requests
+
+# Utils
+tqdm
+numpy
+pandas
+rank_bm25

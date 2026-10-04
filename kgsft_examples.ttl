@@ -1,0 +1,371 @@
+@prefix ex: <http://localhost:7200/repositories/KG-SFT/.well-known/sparql-examples/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix spex: <https://purl.expasy.org/sparql-examples/ontology#> .
+
+#################################################################
+# SPARQL query examples for the KG-SFT endpoint
+# Source: Competency Questions (CQ1-CQ17) written and validated
+# by Manuel & Lorenzo directly against GraphDB (localhost:7200).
+# Format follows sib-swiss/sparql-examples, loadable via
+# sparql_llm.SparqlExamplesLoader.
+#
+# NOTE on CQ11 and CQ12: kept as originally validated, but the
+# subquery in each does not fully bind the outer variable it is
+# meant to constrain (see discussion) - flagged with rdfs:comment
+# so this is visible to anyone reading/reusing the examples.
+#################################################################
+
+_:sparql_examples_prefixes
+    sh:declare
+        [ sh:prefix "sft" ; sh:namespace "http://www.semanticweb.org/KG-SFT#" ] .
+
+### CQ1
+
+ex:cq01
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "Where are the main sports facilities located in Trentino?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	?city ?address
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+ 	sft:has_city ?city ;
+  	sft:has_address ?address .
+}""" ;
+    schema:keywords "sport facility, location, city, address" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ2
+
+ex:cq02
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "What sports can be practiced at each sports facility?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	(REPLACE(STR(?sport), "http://localhost:8080/source/Sport/","") AS ?sport_name)
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_sport ?sport .
+}""" ;
+    schema:keywords "sport facility, sport, relation" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ3
+
+ex:cq03
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "What is the capacity (number of seats) of each sports facility?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	?capacity
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_capacity ?capacity .
+}""" ;
+    schema:keywords "sport facility, capacity, seats" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ4
+
+ex:cq04
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "Which sports facilities are currently open, closed, or undergoing renovation?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	?status
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_status ?status .
+}""" ;
+    schema:keywords "sport facility, status, open, closed, renovation" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ5
+
+ex:cq05
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "Which sports facilities regularly host a specific team or association?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	(REPLACE(STR(?association), "http://localhost:8080/source/Association/","") AS ?team)
+WHERE {
+   ?association a sft:association ;
+     	sft:has_sport ?sport .
+
+   {
+    	SELECT ?sport (MIN(?sport_facility) AS ?sport_facility)
+    	WHERE {
+      	   ?sport_facility a sft:sport_facility ;
+         	sft:has_sport ?sport .
+    	}
+    	GROUP BY ?sport
+   }
+}""" ;
+    schema:keywords "sport facility, association, team, sport" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ6
+
+ex:cq06
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "Which sports facilities require reservations?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_service ?service .
+
+   FILTER (?service IN (
+  	<http://localhost:8080/source/Service/3>,
+  	<http://localhost:8080/source/Service/4>,
+  	<http://localhost:8080/source/Service/5>
+   ))
+}""" ;
+    schema:keywords "sport facility, service, reservation, filter" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ7
+
+ex:cq07
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "Which sports facilities are accessible to people with disabilities?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_accessibility "yes" .
+}""" ;
+    schema:keywords "sport facility, accessibility, disability" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ8
+
+ex:cq08
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "What additional services does a sports facility offer?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	?name
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+    	sft:has_service ?service .
+
+   ?service a sft:service ;
+   	sft:has_name ?name .
+}""" ;
+    schema:keywords "sport facility, service, additional service" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ9
+
+ex:cq09
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "Which public transport options are available to reach a specific sports facility?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	?code
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+    	sft:has_meanOfTransport ?mean_of_transport .
+
+   ?mean_of_transport  a sft:mean_of_transport ;
+   	sft:has_code ?code .
+}""" ;
+    schema:keywords "sport facility, transport, mean of transport, code" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ10
+
+ex:cq10
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "What is the closest public transport stop to a sports facility?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	(REPLACE(STR(?stop), "http://localhost:8080/source/Stop/","") AS ?stop_id)
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_stop ?stop .
+}""" ;
+    schema:keywords "sport facility, stop, transport, proximity" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ11
+# NOTE: the subquery groups ?route by ?mean_of_transport but does not
+# explicitly join that ?route back to the outer ?mean_of_transport /
+
+ex:cq11
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "What is the average travel time by public transport to a facility?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	(AVG(?time) AS ?avg_time)
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+     	sft:has_meanOfTransport ?mean_of_transport .
+
+   ?route a sft:route ;
+     	sft:has_meanOfTransport ?mean_of_transport ;
+     	sft:has_time ?time .
+}
+GROUP BY ?sport_facility""" ;
+    schema:keywords "sport facility, route, travel time, transport, average" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ12
+# transport" and "bike-line paths" is not actually enforced - kept as
+# validated, but likely returns a cartesian product. Double-check.
+
+ex:cq12
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "Are there bike paths connecting a sports facility to the rest of the city?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT DISTINCT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?idFacility)
+	(REPLACE(STR(?path), "http://localhost:8080/source/Path/","") AS ?idPath)
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+     	sft:has_meanOfTransport ?mean_of_transport .
+
+   ?route a sft:route ;
+     	sft:has_meanOfTransport ?mean_of_transport .
+
+   ?path a sft:path ;
+     	sft:has_route ?route ;
+     	sft:has_type "bike line" .
+}""" ;
+    schema:keywords "sport facility, path, bike line, route" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ13
+
+ex:cq13
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "Which sports facilities are located near a specific urban area?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	?address
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_address ?address .
+}""" ;
+    schema:keywords "sport facility, urban area, address" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ14
+
+ex:cq14
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "How can I travel from my town to a ski resort using public transportation?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	?code
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_sport <http://localhost:8080/source/Sport/sci> ;
+	sft:has_meanOfTransport ?mean_of_transport .
+
+   ?mean_of_transport  a sft:mean_of_transport ;
+   	sft:has_code ?code .
+}""" ;
+    schema:keywords "sport facility, ski, sci, transport, code" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ15
+
+ex:cq15
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "Which sports venues are accessible by bike or on foot?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?path), "http://localhost:8080/source/Path/","") AS ?id)
+	?description
+WHERE {
+   ?path sft:has_type "a raso" ;
+   	sft:has_description ?description .
+}""" ;
+    schema:keywords "path, bike, foot, description, type" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ16
+# NOTE: uses predicate has_walkby (no underscore). Cross-check against
+# has_walk_by used elsewhere for the same concept - likely the same
+# property with an inconsistent name, needs to be resolved to a single
+# canonical spelling before building the final VoID/ontology.
+
+ex:cq16
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "Are there any sports facilities that are difficult to access due to limited transportation? (NOTE: check has_walkby vs has_walk_by spelling)"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_walkby 0 .
+}""" ;
+    schema:keywords "sport facility, walkby, transport, accessibility" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .
+
+### CQ17
+
+ex:cq17
+    a sh:SPARQLExecutable, sh:SPARQLSelectExecutable ;
+    rdfs:comment "What are the opening and closing times of sports facilities?"@en ;
+    sh:prefixes _:sparql_examples_prefixes ;
+    sh:select """PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+SELECT
+	(REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+	?timetable
+WHERE {
+   ?sport_facility a sft:sport_facility ;
+  	sft:has_timetable ?timetable .
+}""" ;
+    schema:keywords "sport facility, timetable, opening hours" ;
+    schema:target <http://localhost:7200/repositories/KG-SFT> .

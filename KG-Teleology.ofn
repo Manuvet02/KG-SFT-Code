@@ -1,0 +1,416 @@
+Prefix(:=<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation>
+
+Declaration(Class(<http://schema.org/Activity>))
+Declaration(Class(<http://schema.org/Entity>))
+Declaration(Class(<http://schema.org/Object>))
+Declaration(Class(<http://schema.org/Place>))
+Declaration(Class(<http://schema.org/Role>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#app>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#athlete>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bike>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bike_line>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#building>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line_suburban>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line_urban>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_road>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop_suburban>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop_urban>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#reservation>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Activity>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Actor>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Infrastructure>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Transport>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_line>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_railway>))
+Declaration(Class(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_station>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_app>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_association>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_athlete>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_meanOfTransport>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_path>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_reservation>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_route>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_service>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sport>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sportFacility>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_stop>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_accessibility>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_address>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_age>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_category>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_city>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_code>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_cost>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_coverage>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_description>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_driver>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_equipment>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_foundation_year>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_id>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_length>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_name>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_notes>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_occupation>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_players_number>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_postcode>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_president>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sex>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_status>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_time>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_timetable>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_type>))
+Declaration(DataProperty(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_walk_by>))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_app> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_app>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_app> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_app> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#reservation>)
+
+# Object Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_association> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_association>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_association> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_association> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport>)
+
+# Object Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_athlete> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_athlete>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_athlete> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#app>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_athlete> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_athlete> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#reservation>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_athlete> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport>)
+
+# Object Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_meanOfTransport> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_meanOfTransport>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_meanOfTransport> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_meanOfTransport> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+
+# Object Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_path> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_path>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_path> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route>)
+
+# Object Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_reservation> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_reservation>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_reservation> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#app>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_reservation> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#athlete>)
+
+# Object Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_route> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_route>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_route> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_route> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_route> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop>)
+
+# Object Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_service> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_service>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_service> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+
+# Object Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sport> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sport>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sport> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sport> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sport> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+
+# Object Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sportFacility> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sportFacility>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sportFacility> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sportFacility> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sportFacility> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sportFacility> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop>)
+
+# Object Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_stop> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_stop>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_stop> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route>)
+ObjectPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_stop> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_accessibility> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_accessibility>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_accessibility> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_accessibility> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_address> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_address>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_address> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_address> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_address> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_age> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_age>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_age> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_category> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_category>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_category> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_city> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_city>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_city> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_city> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_city> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_code> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_code>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_code> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_code> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_cost> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_cost>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_cost> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_coverage> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_coverage>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_coverage> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_description> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_description>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_description> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_description> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_driver> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_driver>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_driver> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_equipment> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_equipment>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_equipment> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_foundation_year> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_foundation_year>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_foundation_year> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_id> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_id>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_id> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#building>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_id> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_id> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_id> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_id> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_id> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_length> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_length>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_length> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_name> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_name>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_name> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_name> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_name> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_name> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_name> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_name> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_notes> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_notes>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_notes> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_occupation> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_occupation>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_occupation> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_players_number> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_players_number>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_players_number> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_players_number> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_postcode> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_postcode>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_postcode> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_president> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_president>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_president> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sex> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sex>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_sex> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_status> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_status>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_status> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_status> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_time> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_time>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_time> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#reservation>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_timetable> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_timetable>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_timetable> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_timetable> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_type> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_type>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_type> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_type> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bike>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_type> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_type> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_type> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_type> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_type> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train>)
+
+# Data Property: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_walk_by> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_walk_by>)
+
+DataPropertyDomain(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#has_walk_by> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#app> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#app>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#app> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association> "A group of people that practices a sport"@en)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association> <http://schema.org/Role>)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#association> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Actor>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#athlete> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#athlete>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#athlete> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bike> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bike>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bike> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bike_line> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bike_line>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bike_line> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#building> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#building>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#building> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Infrastructure>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line_suburban> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line_suburban>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line_suburban> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line_urban> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line_urban>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line_urban> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_line>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_road> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_road>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_road> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop_suburban> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop_suburban>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop_suburban> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop_urban> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop_urban>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop_urban> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#bus_stop>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport> "Veicle type"@en)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport> <http://schema.org/Object>)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Transport>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path> "Physical route of means of transport"@en)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path> <http://schema.org/Place>)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Infrastructure>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona> "Defines a person"@en)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona> <http://schema.org/Entity>)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#persona> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Actor>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#reservation> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#reservation>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#reservation> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route> "Transport routes"@en)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route> <http://schema.org/Role>)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Transport>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service> "A service that the facility offers"@en)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service> <http://schema.org/Object>)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#service> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Activity>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport> "Defines the sport"@en)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport> <http://schema.org/Activity>)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Activity>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility> "Place where a sport is practiced"@en)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility> <http://schema.org/Place>)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sport_facility> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#building>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop> "Transport stops"@en)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop> <http://schema.org/Place>)
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#sft_Infrastructure>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#mean_of_transport>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_line> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_line>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_line> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#route>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_railway> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_railway>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_railway> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#path>)
+
+# Class: <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_station> (<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_station>)
+
+SubClassOf(<http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#train_station> <http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation#stop>)
+
+
+)

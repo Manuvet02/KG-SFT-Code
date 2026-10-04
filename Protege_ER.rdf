@@ -1,0 +1,673 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5/"
+     xml:base="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_app -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_app">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#reservation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_association -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_association">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_athlete -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_athlete">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#app"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#reservation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_meanOfTransport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_meanOfTransport">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#route"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_path -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_path">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#route"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_reservation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_reservation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#app"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#athlete"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_route -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_route">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#path"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#stop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_service -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_service">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_sport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_sport">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_sportFacility -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_sportFacility">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#stop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_stop -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_stop">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#route"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_accessibility -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_accessibility">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_address">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#stop"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_age">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_category -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_category">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_city -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_city">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#stop"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_code">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_cost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_cost">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_coverage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_coverage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#stop"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#path"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_driver -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_driver">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_equipment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_equipment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_foundation_year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_foundation_year">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#building"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#path"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#route"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#stop"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_length -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_length">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#route"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#stop"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_notes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_notes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#path"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_occupation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_occupation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_players_number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_players_number">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_postcode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_postcode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_president -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_president">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_sex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_sex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_status -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_status">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_time -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_time">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#reservation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_timetable -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_timetable">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bike"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#path"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#train"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_walk_by -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#has_walk_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/Activity -->
+
+    <owl:Class rdf:about="http://schema.org/Activity"/>
+    
+
+
+    <!-- http://schema.org/Entity -->
+
+    <owl:Class rdf:about="http://schema.org/Entity"/>
+    
+
+
+    <!-- http://schema.org/Object -->
+
+    <owl:Class rdf:about="http://schema.org/Object"/>
+    
+
+
+    <!-- http://schema.org/Place -->
+
+    <owl:Class rdf:about="http://schema.org/Place"/>
+    
+
+
+    <!-- http://schema.org/Role -->
+
+    <owl:Class rdf:about="http://schema.org/Role"/>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#app -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#app">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#association">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Role"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Actor"/>
+        <rdfs:comment xml:lang="en">A group of people that practices a sport</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#athlete -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#athlete">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bike -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bike">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#mean_of_transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bike_line -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bike_line">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#building -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#building">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#mean_of_transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_line -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_line">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_line_suburban -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_line_suburban">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_line"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_line_urban -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_line_urban">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_line"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_road -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_road">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#path"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_stop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_stop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_stop_suburban -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_stop_suburban">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_stop_urban -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_stop_urban">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#bus_stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#mean_of_transport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#mean_of_transport">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Transport"/>
+        <rdfs:comment xml:lang="en">Veicle type</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#path -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#path">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Infrastructure"/>
+        <rdfs:comment xml:lang="en">Physical route of means of transport</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#persona">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Entity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Actor"/>
+        <rdfs:comment xml:lang="en">Defines a person</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#reservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#reservation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#route -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#route">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Role"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Transport"/>
+        <rdfs:comment xml:lang="en">Transport routes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#service">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Activity"/>
+        <rdfs:comment xml:lang="en">A service that the facility offers</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Activity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Actor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Infrastructure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Infrastructure"/>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Transport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Transport"/>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Activity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Activity"/>
+        <rdfs:comment xml:lang="en">Defines the sport</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sport_facility">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#building"/>
+        <rdfs:comment xml:lang="en">Place where a sport is practiced</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#stop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#stop">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#sft_Infrastructure"/>
+        <rdfs:comment xml:lang="en">Transport stops</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#train -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#train">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#mean_of_transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#train_line -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#train_line">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#train_railway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#train_railway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#path"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#train_station -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#train_station">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/manuv/ontologies/2025/10/untitled-ontology-5#stop"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

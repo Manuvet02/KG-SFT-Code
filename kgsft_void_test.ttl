@@ -1,0 +1,212 @@
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sft:   <http://www.semanticweb.org/KG-SFT#> .
+
+#################################################################
+# VoID description for the KG-SFT endpoint
+# (Sport Facilities & Transport connections in Trentino)
+#
+# v2 - updated after cross-checking CQ1-CQ17 (validated on GraphDB
+# by Manu & collega). Adds classes/properties not previously known:
+# sft:association, sft:service, sft:mean_of_transport, sft:sport,
+# has_code, has_time, has_route, has_description, has_walkby.
+#
+# STILL OPEN / TO VERIFY:
+# - Instance namespace: CQs use http://localhost:8080/source/{Class}/{id}
+#   (no "/relation/" segment). Earlier notes had ".../SportFacility/relation/{id}" -
+#   that segment needs to be reconfirmed with a direct query, may be wrong.
+# - has_walkby (CQ16) vs has_walk_by (used elsewhere) - likely the same
+#   property, naming needs to be resolved to one canonical spelling.
+# - void:entities counts below are still the earlier verified class
+#   counts (path ~7846, sport_facility ~6414, stop ~4040, route ~2234);
+#   association/service/mean_of_transport/sport counts not yet counted.
+# - CQ11/CQ12 subquery join semantics are questionable, see comments
+#   in kgsft_examples_validated.ttl - may affect which properties are
+#   considered "reliably populated" for has_meanOfTransport chains.
+#################################################################
+
+<http://localhost:7200/repositories/KG-SFT#dataset>
+    a void:Dataset ;
+    dcterms:title "KG-SFT: Knowledge Graph of Sport Facilities and Transport in Trentino" ;
+    void:sparqlEndpoint <http://localhost:7200/repositories/KG-SFT> ;
+    void:triples 199346 ;
+    void:classPartition
+        <#partition_sport_facility> ,
+        <#partition_path> ,
+        <#partition_stop> ,
+        <#partition_route> ,
+        <#partition_association> ,
+        <#partition_service> ,
+        <#partition_mean_of_transport> ,
+        <#partition_sport> .
+
+#################################################################
+# Class: sport_facility
+#################################################################
+
+<#partition_sport_facility>
+    a void:Dataset ;
+    void:class sft:sport_facility ;
+    void:entities 6414 ;
+    void:propertyPartition
+        <#pp_sf_has_name> , <#pp_sf_has_address> , <#pp_sf_has_city> ,
+        <#pp_sf_has_capacity> , <#pp_sf_has_accessibility> , <#pp_sf_has_status> ,
+        <#pp_sf_has_timetable> , <#pp_sf_has_type> , <#pp_sf_has_walkby> ,
+        <#pp_sf_has_sport> , <#pp_sf_has_stop> , <#pp_sf_has_service> ,
+        <#pp_sf_has_meanOfTransport> .
+
+<#pp_sf_has_name>          a void:Dataset ; void:property sft:has_name ;          void:datatype xsd:string .
+<#pp_sf_has_address>       a void:Dataset ; void:property sft:has_address ;       void:datatype xsd:string .
+<#pp_sf_has_city>          a void:Dataset ; void:property sft:has_city ;          void:datatype xsd:string .
+<#pp_sf_has_capacity>      a void:Dataset ; void:property sft:has_capacity ;      void:datatype xsd:integer .
+<#pp_sf_has_accessibility> a void:Dataset ; void:property sft:has_accessibility ; void:datatype xsd:string . # confirmed values like "yes" (CQ7)
+<#pp_sf_has_status>        a void:Dataset ; void:property sft:has_status ;        void:datatype xsd:string . # e.g. open/closed/renovation (CQ4)
+<#pp_sf_has_timetable>     a void:Dataset ; void:property sft:has_timetable ;     void:datatype xsd:string .
+<#pp_sf_has_type>          a void:Dataset ; void:property sft:has_type ;          void:datatype xsd:string .
+<#pp_sf_has_walkby>
+    a void:Dataset ;
+    void:property sft:has_walkby ; # NOTE: spelling per CQ16, cross-check vs has_walk_by
+    void:datatype xsd:integer .    # CQ16 filters on numeric 0
+
+<#pp_sf_has_sport>
+    a void:Dataset ;
+    void:property sft:has_sport ;
+    void:classPartition <#partition_sport> . # confirmed range: sft:sport (CQ2, CQ14)
+
+<#pp_sf_has_stop>
+    a void:Dataset ;
+    void:property sft:has_stop ;
+    void:classPartition <#partition_stop> . # confirmed CQ10
+
+<#pp_sf_has_service>
+    a void:Dataset ;
+    void:property sft:has_service ;
+    void:classPartition <#partition_service> . # confirmed CQ6, CQ8
+
+<#pp_sf_has_meanOfTransport>
+    a void:Dataset ;
+    void:property sft:has_meanOfTransport ;
+    void:classPartition <#partition_mean_of_transport> . # confirmed CQ9, CQ11, CQ12, CQ14
+
+#################################################################
+# Class: sport
+#################################################################
+
+<#partition_sport>
+    a void:Dataset ;
+    void:class sft:sport ;
+    void:entities 40 .
+    # instance namespace:
+    # http://localhost:8080/source/Sport/{id}, e.g. .../Sport/sci (CQ14)
+
+#################################################################
+# Class: association
+#################################################################
+
+<#partition_association>
+    a void:Dataset ;
+    void:class sft:association ;
+    void:propertyPartition <#pp_assoc_has_sport> ;
+    void:entities 214 .
+    # instance namespace: http://localhost:8080/source/Association/{id}
+
+<#pp_assoc_has_sport>
+    a void:Dataset ;
+    void:property sft:has_sport ;
+    void:classPartition <#partition_sport> . # confirmed CQ5
+
+#################################################################
+# Class: service
+#################################################################
+
+<#partition_service>
+    a void:Dataset ;
+    void:class sft:service ;
+    void:propertyPartition <#pp_service_has_name> ;
+    void:entities 19 .
+    # instance namespace: http://localhost:8080/source/Service/{id}, e.g. Service/3,4,5 (CQ6)
+
+<#pp_service_has_name>
+    a void:Dataset ;
+    void:property sft:has_name ;
+    void:datatype xsd:string . # confirmed CQ8
+
+#################################################################
+# Class: mean_of_transport
+#################################################################
+
+<#partition_mean_of_transport>
+    a void:Dataset ;
+    void:class sft:mean_of_transport ;
+    void:propertyPartition <#pp_mot_has_code> ;
+    void:entities 6 .
+
+<#pp_mot_has_code>
+    a void:Dataset ;
+    void:property sft:has_code ;
+    void:datatype xsd:string . # confirmed CQ9, CQ14
+
+#################################################################
+# Class: path
+#################################################################
+
+<#partition_path>
+    a void:Dataset ;
+    void:class sft:path ;
+    void:entities 7846 ;
+    void:propertyPartition
+        <#pp_path_has_type> , <#pp_path_has_description> , <#pp_path_has_route> .
+    # instance namespace: http://localhost:8080/source/Path/{id}
+
+<#pp_path_has_type>
+    a void:Dataset ;
+    void:property sft:has_type ;
+    void:datatype xsd:string . # confirmed values: "bike line" (CQ12), "a raso" (CQ15)
+
+<#pp_path_has_description>
+    a void:Dataset ;
+    void:property sft:has_description ;
+    void:datatype xsd:string . # confirmed CQ15
+
+<#pp_path_has_route>
+    a void:Dataset ;
+    void:property sft:has_route ;
+    void:classPartition <#partition_route> . # confirmed CQ12
+
+#################################################################
+# Class: stop
+#################################################################
+
+<#partition_stop>
+    a void:Dataset ;
+    void:class sft:stop ;
+    void:entities 4040 .
+    # instance namespace: http://localhost:8080/source/Stop/{id} (CQ10)
+    # no data/object properties on stop itself confirmed yet from the CQs
+    # (has_meanOfTransport / has_service in earlier notes were observed
+    # as properties of sport_facility and stop pointing outward, not
+    # necessarily properties whose DOMAIN is stop - reverify domain/range)
+
+#################################################################
+# Class: route
+#################################################################
+
+<#partition_route>
+    a void:Dataset ;
+    void:class sft:route ;
+    void:entities 2234 ;
+    void:propertyPartition
+        <#pp_route_has_time> , <#pp_route_has_meanOfTransport> .
+
+<#pp_route_has_time>
+    a void:Dataset ;
+    void:property sft:has_time ;
+    void:datatype xsd:decimal . # confirmed CQ11, exact datatype (int/decimal/duration) to verify
+
+<#pp_route_has_meanOfTransport>
+    a void:Dataset ;
+    void:property sft:has_meanOfTransport ;
+    void:classPartition <#partition_mean_of_transport> . # confirmed CQ11

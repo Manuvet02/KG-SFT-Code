@@ -1,0 +1,740 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation">
+    <Prefix name="" IRI="http://www.semanticweb.org/manuv/ontologies/2025/10/SportFacility_Transportation/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="http://schema.org/Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Place"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#app"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#association"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#athlete"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bike"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bike_line"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#building"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bus_line"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bus_line_suburban"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bus_line_urban"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bus_road"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bus_stop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bus_stop_suburban"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bus_stop_urban"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mean_of_transport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#path"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#persona"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#reservation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#route"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sft_Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sft_Actor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sft_Infrastructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sft_Transport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sport_facility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#stop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#train"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#train_line"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#train_railway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#train_station"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_app"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_association"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_athlete"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_meanOfTransport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_path"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_reservation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_route"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_service"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_sport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_sportFacility"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_stop"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_accessibility"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_address"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_age"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_category"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_city"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_code"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_cost"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_coverage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_driver"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_equipment"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_foundation_year"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_length"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_notes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_occupation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_players_number"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_postcode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_president"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_sex"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_status"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_time"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_timetable"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_type"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_walk_by"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#app"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#association"/>
+        <Class IRI="http://schema.org/Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#association"/>
+        <Class IRI="#sft_Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#athlete"/>
+        <Class IRI="#persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bike"/>
+        <Class IRI="#mean_of_transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bike_line"/>
+        <Class IRI="#route"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#building"/>
+        <Class IRI="#sft_Infrastructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bus"/>
+        <Class IRI="#mean_of_transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bus_line"/>
+        <Class IRI="#route"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bus_line_suburban"/>
+        <Class IRI="#bus_line"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bus_line_urban"/>
+        <Class IRI="#bus_line"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bus_road"/>
+        <Class IRI="#path"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bus_stop"/>
+        <Class IRI="#stop"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bus_stop_suburban"/>
+        <Class IRI="#bus_stop"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bus_stop_urban"/>
+        <Class IRI="#bus_stop"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mean_of_transport"/>
+        <Class IRI="http://schema.org/Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mean_of_transport"/>
+        <Class IRI="#sft_Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#path"/>
+        <Class IRI="http://schema.org/Place"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#path"/>
+        <Class IRI="#sft_Infrastructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#persona"/>
+        <Class IRI="http://schema.org/Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#persona"/>
+        <Class IRI="#sft_Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#reservation"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#route"/>
+        <Class IRI="http://schema.org/Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#route"/>
+        <Class IRI="#sft_Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#service"/>
+        <Class IRI="http://schema.org/Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#service"/>
+        <Class IRI="#sft_Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sport"/>
+        <Class IRI="http://schema.org/Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sport"/>
+        <Class IRI="#sft_Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sport_facility"/>
+        <Class IRI="http://schema.org/Place"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sport_facility"/>
+        <Class IRI="#building"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stop"/>
+        <Class IRI="http://schema.org/Place"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stop"/>
+        <Class IRI="#sft_Infrastructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#train"/>
+        <Class IRI="#mean_of_transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#train_line"/>
+        <Class IRI="#route"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#train_railway"/>
+        <Class IRI="#path"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#train_station"/>
+        <Class IRI="#stop"/>
+    </SubClassOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_app"/>
+        <Class IRI="#persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_app"/>
+        <Class IRI="#reservation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_association"/>
+        <Class IRI="#persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_association"/>
+        <Class IRI="#sport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_athlete"/>
+        <Class IRI="#app"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_athlete"/>
+        <Class IRI="#association"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_athlete"/>
+        <Class IRI="#reservation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_athlete"/>
+        <Class IRI="#sport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_meanOfTransport"/>
+        <Class IRI="#route"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_meanOfTransport"/>
+        <Class IRI="#sport_facility"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_path"/>
+        <Class IRI="#route"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_reservation"/>
+        <Class IRI="#app"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_reservation"/>
+        <Class IRI="#athlete"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_route"/>
+        <Class IRI="#mean_of_transport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_route"/>
+        <Class IRI="#path"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_route"/>
+        <Class IRI="#stop"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_service"/>
+        <Class IRI="#sport_facility"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_sport"/>
+        <Class IRI="#association"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_sport"/>
+        <Class IRI="#persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_sport"/>
+        <Class IRI="#sport_facility"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_sportFacility"/>
+        <Class IRI="#mean_of_transport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_sportFacility"/>
+        <Class IRI="#service"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_sportFacility"/>
+        <Class IRI="#sport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_sportFacility"/>
+        <Class IRI="#stop"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_stop"/>
+        <Class IRI="#route"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_stop"/>
+        <Class IRI="#sport_facility"/>
+    </ObjectPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_accessibility"/>
+        <Class IRI="#mean_of_transport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_accessibility"/>
+        <Class IRI="#sport_facility"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_address"/>
+        <Class IRI="#association"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_address"/>
+        <Class IRI="#sport_facility"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_address"/>
+        <Class IRI="#stop"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_age"/>
+        <Class IRI="#persona"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_category"/>
+        <Class IRI="#association"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_city"/>
+        <Class IRI="#association"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_city"/>
+        <Class IRI="#sport_facility"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_city"/>
+        <Class IRI="#stop"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_code"/>
+        <Class IRI="#mean_of_transport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_code"/>
+        <Class IRI="#persona"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_cost"/>
+        <Class IRI="#service"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_coverage"/>
+        <Class IRI="#stop"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_description"/>
+        <Class IRI="#path"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_description"/>
+        <Class IRI="#service"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_driver"/>
+        <Class IRI="#persona"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_equipment"/>
+        <Class IRI="#sport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_foundation_year"/>
+        <Class IRI="#association"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_id"/>
+        <Class IRI="#building"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_id"/>
+        <Class IRI="#mean_of_transport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_id"/>
+        <Class IRI="#path"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_id"/>
+        <Class IRI="#route"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_id"/>
+        <Class IRI="#service"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_id"/>
+        <Class IRI="#stop"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_length"/>
+        <Class IRI="#route"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_name"/>
+        <Class IRI="#association"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_name"/>
+        <Class IRI="#persona"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_name"/>
+        <Class IRI="#service"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_name"/>
+        <Class IRI="#sport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_name"/>
+        <Class IRI="#sport_facility"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_name"/>
+        <Class IRI="#stop"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_notes"/>
+        <Class IRI="#path"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_occupation"/>
+        <Class IRI="#persona"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_players_number"/>
+        <Class IRI="#association"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_players_number"/>
+        <Class IRI="#sport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_postcode"/>
+        <Class IRI="#association"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_president"/>
+        <Class IRI="#association"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_sex"/>
+        <Class IRI="#persona"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_status"/>
+        <Class IRI="#mean_of_transport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_status"/>
+        <Class IRI="#service"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_time"/>
+        <Class IRI="#reservation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_timetable"/>
+        <Class IRI="#service"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_timetable"/>
+        <Class IRI="#sport_facility"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_type"/>
+        <Class IRI="#association"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_type"/>
+        <Class IRI="#bike"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_type"/>
+        <Class IRI="#path"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_type"/>
+        <Class IRI="#service"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_type"/>
+        <Class IRI="#sport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_type"/>
+        <Class IRI="#sport_facility"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_type"/>
+        <Class IRI="#train"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_walk_by"/>
+        <Class IRI="#sport_facility"/>
+    </DataPropertyDomain>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#association</IRI>
+        <Literal xml:lang="en">A group of people that practices a sport</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#mean_of_transport</IRI>
+        <Literal xml:lang="en">Veicle type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#path</IRI>
+        <Literal xml:lang="en">Physical route of means of transport</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#persona</IRI>
+        <Literal xml:lang="en">Defines a person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#route</IRI>
+        <Literal xml:lang="en">Transport routes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#service</IRI>
+        <Literal xml:lang="en">A service that the facility offers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sport</IRI>
+        <Literal xml:lang="en">Defines the sport</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sport_facility</IRI>
+        <Literal xml:lang="en">Place where a sport is practiced</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#stop</IRI>
+        <Literal xml:lang="en">Transport stops</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

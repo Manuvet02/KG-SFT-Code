@@ -1,0 +1,7 @@
+Schema Progetto SPARQLLM
+-Linguaggio Naturale
+-Recupero metadata dal Knowledge Graph        
+-LLM guidato dal contesto       
+-Generazione query SPARQL        
+-Validazione + esecuzione       
+-Risultato finale

@@ -1,0 +1,895 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix instance: <http://localhost:8080/source/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sft: <http://www.semanticweb.org/KG-SFT#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sft:dataset a void:Dataset ;
+    dcterms:description "Knowledge Graph of sport facilities and transport in Trentino (KG-SFT)." ;
+    void:classPartition [ void:class rdfs:ContainerMembershipProperty ;
+            void:entities 1 ;
+            void:exampleResource rdf:_1 ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Containermembershipproperty/" ],
+        [ void:class owl:Thing ;
+            void:entities 20818 ;
+            void:exampleResource instance:1 ;
+            void:propertyPartition [ void:property sft:has_path ;
+                    rdfs:range sft:path ],
+                [ void:property sft:has_category ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_timetable ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_players_number ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_developer ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_coverage ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_occupation ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_service ;
+                    rdfs:range sft:service ],
+                [ void:property sft:has_driver ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_name ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_status ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_sport ;
+                    rdfs:range sft:sport ],
+                [ void:property sft:has_time ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_date ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_cost ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_president ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_code ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_association ;
+                    rdfs:range sft:association ],
+                [ void:property sft:has_made_by ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_capacity ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_app ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_route ;
+                    rdfs:range sft:route ],
+                [ void:property sft:has_sportFacility ;
+                    rdfs:range sft:sport_facility ],
+                [ void:property sft:has_equipment ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_version ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_length ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_os ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_address ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_number_people ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_meanOfTransport ;
+                    rdfs:range sft:mean_of_transport ],
+                [ void:property sft:has_description ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_notes ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_stop ;
+                    rdfs:range sft:stop ],
+                [ void:property sft:has_payment ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_sex ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_age ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_accessibility ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_walk_by ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_city ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_foundation_year ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_postcode ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/Thing/" ],
+        [ void:class <http://localhost:8080/source/Athlete/ASD%20GYMNICA> ;
+            void:entities 2 ;
+            void:exampleResource <genid-766d1a9b2f44495ab0240e771dcf36963542-node1jccalo4lx9> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Asd%20gymnica/" ],
+        [ void:class owl:TransitiveProperty ;
+            void:entities 4 ;
+            void:exampleResource rdfs:subPropertyOf ;
+            void:propertyPartition [ void:property rdfs:range ;
+                    rdfs:range owl:Class ],
+                [ void:property rdfs:subPropertyOf ;
+                    rdfs:range rdf:Property ],
+                [ void:property rdfs:domain ;
+                    rdfs:range owl:Class ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property <http://proton.semanticweb.org/protonsys#transitiveOver> ;
+                    rdfs:range rdf:Property ],
+                [ void:property owl:inverseOf ;
+                    rdfs:range owl:SymmetricProperty ] ;
+            void:uriSpace "http://localhost:8080/source/Transitiveproperty/" ],
+        [ void:class sft:app ;
+            void:entities 10 ;
+            void:exampleResource instance:2 ;
+            void:propertyPartition [ void:property sft:has_sex ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_association ;
+                    rdfs:range sft:association ],
+                [ void:property sft:has_developer ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_app ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_sport ;
+                    rdfs:range sft:sport ],
+                [ void:property sft:has_os ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_cost ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_timetable ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_status ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_occupation ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_description ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_name ;
+                    rdfs:range rdf:langString ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_age ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_version ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_driver ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/App/" ],
+        [ void:class <http://localhost:8080/source/Athlete/TRENTINO%20VOLLEY%20SRL> ;
+            void:entities 2 ;
+            void:exampleResource <genid-766d1a9b2f44495ab0240e771dcf36963542-node1jccalo4lx3> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Trentino%20volley%20srl/" ],
+        [ void:class sft:association ;
+            void:entities 214 ;
+            void:exampleResource instance:TRENTINO%20VOLLEY%20SRL ;
+            void:propertyPartition [ void:property sft:has_players_number ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_category ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_president ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_foundation_year ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_address ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_city ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_sport ;
+                    rdfs:range sft:sport ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_postcode ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/Association/" ],
+        [ void:class <http://www.w3.org/ns/r2rml#TriplesMap> ;
+            void:entities 13 ;
+            void:exampleResource <http://isi.edu/integration/karma/dev#TriplesMap_f66a8e25-9b81-4d81-8883-891df53c6029> ;
+            void:propertyPartition [ void:property <http://www.w3.org/ns/r2rml#subjectMap> ;
+                    rdfs:range <http://www.w3.org/ns/r2rml#SubjectMap> ],
+                [ void:property <http://www.w3.org/ns/r2rml#logicalTable> ;
+                    rdfs:range <http://www.w3.org/ns/r2rml#LogicalTable> ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property <http://www.w3.org/ns/r2rml#predicateObjectMap> ;
+                    rdfs:range <http://www.w3.org/ns/r2rml#PredicateObjectMap> ],
+                [ void:property <http://isi.edu/integration/karma/dev#isPartOfMapping> ;
+                    rdfs:range <http://isi.edu/integration/karma/dev#R2RMLMapping> ] ;
+            void:uriSpace "http://localhost:8080/source/Triplesmap/" ],
+        [ void:class rdf:Property ;
+            void:entities 90 ;
+            void:exampleResource rdf:type ;
+            void:propertyPartition [ void:property owl:inverseOf ;
+                    rdfs:range owl:SymmetricProperty ],
+                [ void:property rdfs:domain ;
+                    rdfs:range owl:Class ],
+                [ void:property rdfs:label ;
+                    rdfs:range xsd:string ],
+                [ void:property rdfs:subPropertyOf ;
+                    rdfs:range rdf:Property ],
+                [ void:property <http://proton.semanticweb.org/protonsys#transitiveOver> ;
+                    rdfs:range rdf:Property ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property rdfs:range ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Property/" ],
+        [ void:class <http://www.w3.org/ns/r2rml#RefObjectMap> ;
+            void:entities 9 ;
+            void:exampleResource <http://isi.edu/integration/karma/dev#RefObjectMap_f2221f14-6de2-4165-ad38-b8d809ce743e> ;
+            void:propertyPartition [ void:property <http://isi.edu/integration/karma/dev#isPartOfMapping> ;
+                    rdfs:range <http://isi.edu/integration/karma/dev#R2RMLMapping> ],
+                [ void:property <http://www.w3.org/ns/r2rml#parentTriplesMap> ;
+                    rdfs:range <http://www.w3.org/ns/r2rml#TriplesMap> ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Refobjectmap/" ],
+        [ void:class owl:ObjectProperty ;
+            void:entities 12 ;
+            void:exampleResource sft:has_app ;
+            void:propertyPartition [ void:property rdfs:subPropertyOf ;
+                    rdfs:range rdf:Property ],
+                [ void:property rdfs:range ;
+                    rdfs:range owl:Class ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property rdfs:label ;
+                    rdfs:range xsd:string ],
+                [ void:property rdfs:domain ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Objectproperty/" ],
+        [ void:class <http://www.w3.org/ns/r2rml#ObjectMap> ;
+            void:entities 38 ;
+            void:exampleResource <http://isi.edu/integration/karma/dev#RefObjectMap_f2221f14-6de2-4165-ad38-b8d809ce743e> ;
+            void:propertyPartition [ void:property <http://www.w3.org/ns/r2rml#language> ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property <http://www.w3.org/ns/r2rml#parentTriplesMap> ;
+                    rdfs:range <http://www.w3.org/ns/r2rml#TriplesMap> ],
+                [ void:property <http://isi.edu/integration/karma/dev#isPartOfMapping> ;
+                    rdfs:range <http://isi.edu/integration/karma/dev#R2RMLMapping> ],
+                [ void:property <http://www.w3.org/ns/r2rml#datatype> ;
+                    rdfs:range xsd:string ],
+                [ void:property <http://www.w3.org/ns/r2rml#column> ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/Objectmap/" ],
+        [ void:class <http://localhost:8080/source/Athlete/ASD%20Val%20di%20Cembra%20Calcio> ;
+            void:entities 2 ;
+            void:exampleResource <genid-766d1a9b2f44495ab0240e771dcf36963542-node1jccalo4lx6> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Asd%20val%20di%20cembra%20calcio/" ],
+        [ void:class <http://isi.edu/integration/karma/dev#R2RMLMapping> ;
+            void:entities 5 ;
+            void:exampleResource <genid-584507d392c54f7eb62d06b42ad788ea3578-node1jc75e438x2> ;
+            void:propertyPartition [ void:property <http://isi.edu/integration/karma/dev#sourceName> ;
+                    rdfs:range xsd:string ],
+                [ void:property <http://isi.edu/integration/karma/dev#hasBaseURI> ;
+                    rdfs:range xsd:string ],
+                [ void:property <http://isi.edu/integration/karma/dev#hasSubjectMap> ;
+                    rdfs:range <http://www.w3.org/ns/r2rml#SubjectMap> ],
+                [ void:property <http://isi.edu/integration/karma/dev#hasModelLabel> ;
+                    rdfs:range xsd:string ],
+                [ void:property <http://isi.edu/integration/karma/dev#hasWorksheetHistory> ;
+                    rdfs:range xsd:string ],
+                [ void:property <http://isi.edu/integration/karma/dev#modelVersion> ;
+                    rdfs:range xsd:string ],
+                [ void:property <http://isi.edu/integration/karma/dev#hasOutputColumns> ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property <http://isi.edu/integration/karma/dev#modelPublicationTime> ;
+                    rdfs:range xsd:long ],
+                [ void:property <http://isi.edu/integration/karma/dev#hasObjectMap> ;
+                    rdfs:range <http://www.w3.org/ns/r2rml#ObjectMap> ],
+                [ void:property owl:sameAs ],
+                [ void:property <http://isi.edu/integration/karma/dev#hasInputColumns> ;
+                    rdfs:range xsd:string ],
+                [ void:property <http://isi.edu/integration/karma/dev#hasPredicateObjectMap> ;
+                    rdfs:range <http://www.w3.org/ns/r2rml#PredicateObjectMap> ],
+                [ void:property <http://isi.edu/integration/karma/dev#hasTriplesMap> ;
+                    rdfs:range <http://www.w3.org/ns/r2rml#TriplesMap> ],
+                [ void:property <http://isi.edu/integration/karma/dev#hasLogicalTable> ;
+                    rdfs:range <http://www.w3.org/ns/r2rml#LogicalTable> ] ;
+            void:uriSpace "http://localhost:8080/source/R2rmlmapping/" ],
+        [ void:class <http://schema.org/Entity> ;
+            void:entities 7 ;
+            void:exampleResource instance:1 ;
+            void:propertyPartition [ void:property sft:has_name ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_sex ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_association ;
+                    rdfs:range sft:association ],
+                [ void:property sft:has_sport ;
+                    rdfs:range sft:sport ],
+                [ void:property sft:has_occupation ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_driver ;
+                    rdfs:range rdf:langString ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_app ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_age ;
+                    rdfs:range rdf:langString ] ;
+            void:uriSpace "http://localhost:8080/source/Entity/" ],
+        [ void:class owl:Ontology ;
+            void:entities 1 ;
+            void:exampleResource <http://www.semanticweb.org/KG-SFT> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Ontology/" ],
+        [ void:class sft:mean_of_transport ;
+            void:entities 6 ;
+            void:exampleResource <http://localhost:8080/source/MeanOfTransport/1> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_accessibility ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_sportFacility ;
+                    rdfs:range sft:sport_facility ],
+                [ void:property sft:has_status ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_code ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_capacity ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/MeanOfTransport/" ],
+        [ void:class <http://localhost:8080/source/Athlete/3> ;
+            void:entities 2 ;
+            void:exampleResource <genid-766d1a9b2f44495ab0240e771dcf36963542-node1jccalo4lx7> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/3/" ],
+        [ void:class sft:reservation ;
+            void:entities 2 ;
+            void:exampleResource <http://localhost:8080/source/Reservation/4> ;
+            void:propertyPartition [ void:property sft:has_made_by ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_date ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_timetable ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_cost ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_number_people ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_time ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_name ;
+                    rdfs:range rdf:langString ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_description ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_app ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_status ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_payment ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/Reservation/" ],
+        [ void:class owl:Class ;
+            void:entities 31 ;
+            void:exampleResource sft:persona ;
+            void:propertyPartition [ void:property rdfs:subClassOf ;
+                    rdfs:range rdfs:Class ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property rdfs:comment ;
+                    rdfs:range rdf:langString ],
+                [ void:property rdfs:label ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/Class/" ],
+        [ void:class sft:sport ;
+            void:entities 40 ;
+            void:exampleResource instance:pallavolo ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_players_number ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_equipment ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/Sport/" ],
+        [ void:class sft:route ;
+            void:entities 2234 ;
+            void:exampleResource <http://localhost:8080/source/Route/36> ;
+            void:propertyPartition [ void:property sft:has_length ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_path ;
+                    rdfs:range sft:path ],
+                [ void:property sft:has_stop ;
+                    rdfs:range sft:stop ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_time ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_meanOfTransport ;
+                    rdfs:range sft:mean_of_transport ] ;
+            void:uriSpace "http://localhost:8080/source/Route/" ],
+        [ void:class <http://schema.org/Role> ;
+            void:entities 2448 ;
+            void:exampleResource instance:TRENTINO%20VOLLEY%20SRL ;
+            void:propertyPartition [ void:property sft:has_postcode ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_players_number ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_stop ;
+                    rdfs:range sft:stop ],
+                [ void:property sft:has_address ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_city ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_president ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_foundation_year ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_category ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_sport ;
+                    rdfs:range sft:sport ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_path ;
+                    rdfs:range sft:path ],
+                [ void:property sft:has_meanOfTransport ;
+                    rdfs:range sft:mean_of_transport ],
+                [ void:property sft:has_time ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_length ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/Role/" ],
+        [ void:class <http://schema.org/Object> ;
+            void:entities 25 ;
+            void:exampleResource instance:2 ;
+            void:propertyPartition [ void:property sft:has_os ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_made_by ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_app ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_sex ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_capacity ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_code ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_driver ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_sport ;
+                    rdfs:range sft:sport ],
+                [ void:property sft:has_cost ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_date ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_developer ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_number_people ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_occupation ;
+                    rdfs:range rdf:langString ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_age ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_association ;
+                    rdfs:range sft:association ],
+                [ void:property sft:has_timetable ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_version ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_name ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_sportFacility ;
+                    rdfs:range sft:sport_facility ],
+                [ void:property sft:has_payment ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_status ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_description ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_accessibility ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_time ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/Object/" ],
+        [ void:class <http://isi.edu/integration/karma/dev#steinerTreeRootNode> ;
+            void:entities 5 ;
+            void:exampleResource <genid-584507d392c54f7eb62d06b42ad788ea3578-node1jc75e438x13> ;
+            void:propertyPartition [ void:property <http://isi.edu/integration/karma/dev#isPartOfMapping> ;
+                    rdfs:range <http://isi.edu/integration/karma/dev#R2RMLMapping> ],
+                [ void:property <http://www.w3.org/ns/r2rml#template> ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property <http://www.w3.org/ns/r2rml#class> ;
+                    rdfs:range owl:Class ],
+                [ void:property <http://isi.edu/integration/karma/dev#alignmentNodeId> ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/Steinertreerootnode/" ],
+        [ void:class <http://schema.org/Place> ;
+            void:entities 18300 ;
+            void:exampleResource <http://localhost:8080/source/SportFacility/relation/295593> ;
+            void:propertyPartition [ void:property sft:has_service ;
+                    rdfs:range sft:service ],
+                [ void:property sft:has_stop ;
+                    rdfs:range sft:stop ],
+                [ void:property sft:has_walk_by ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_capacity ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_timetable ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_city ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_coverage ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_description ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_sport ;
+                    rdfs:range sft:sport ],
+                [ void:property sft:has_name ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_status ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_address ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_notes ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_route ;
+                    rdfs:range sft:route ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_accessibility ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_meanOfTransport ;
+                    rdfs:range sft:mean_of_transport ],
+                [ void:property sft:has_sportFacility ;
+                    rdfs:range sft:sport_facility ] ;
+            void:uriSpace "http://localhost:8080/source/Place/" ],
+        [ void:class sft:athlete ;
+            void:entities 7 ;
+            void:exampleResource instance:1 ;
+            void:propertyPartition [ void:property sft:has_age ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_association ;
+                    rdfs:range sft:association ],
+                [ void:property sft:has_sport ;
+                    rdfs:range sft:sport ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_driver ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_sex ;
+                    rdfs:range rdf:langString ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_occupation ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_app ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_name ;
+                    rdfs:range rdf:langString ] ;
+            void:uriSpace "http://localhost:8080/source/Athlete/" ],
+        [ void:class sft:service ;
+            void:entities 19 ;
+            void:exampleResource instance:2 ;
+            void:propertyPartition [ void:property sft:has_date ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_developer ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_driver ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_app ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_sport ;
+                    rdfs:range sft:sport ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_description ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_time ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_timetable ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_number_people ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_version ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_made_by ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_sportFacility ;
+                    rdfs:range sft:sport_facility ],
+                [ void:property sft:has_cost ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_status ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_occupation ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_os ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_name ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_payment ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_association ;
+                    rdfs:range sft:association ],
+                [ void:property sft:has_age ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_sex ;
+                    rdfs:range rdf:langString ] ;
+            void:uriSpace "http://localhost:8080/source/Service/" ],
+        [ void:class sft:sport_facility ;
+            void:entities 6414 ;
+            void:exampleResource <http://localhost:8080/source/SportFacility/relation/295593> ;
+            void:propertyPartition [ void:property sft:has_timetable ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_sport ;
+                    rdfs:range sft:sport ],
+                [ void:property sft:has_accessibility ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_stop ;
+                    rdfs:range sft:stop ],
+                [ void:property sft:has_name ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_walk_by ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_service ;
+                    rdfs:range sft:service ],
+                [ void:property sft:has_meanOfTransport ;
+                    rdfs:range sft:mean_of_transport ],
+                [ void:property sft:has_status ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_address ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_city ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_capacity ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/SportFacility/" ],
+        [ void:class <http://localhost:8080/source/Athlete/calcio> ;
+            void:entities 2 ;
+            void:exampleResource <genid-766d1a9b2f44495ab0240e771dcf36963542-node1jccalo4lx4> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Calcio/" ],
+        [ void:class <http://www.w3.org/ns/r2rml#SubjectMap> ;
+            void:entities 17 ;
+            void:exampleResource <genid-584507d392c54f7eb62d06b42ad788ea3578-node1jc75e438x3> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property <http://isi.edu/integration/karma/dev#alignmentNodeId> ;
+                    rdfs:range xsd:string ],
+                [ void:property <http://www.w3.org/ns/r2rml#class> ;
+                    rdfs:range owl:Class ],
+                [ void:property <http://www.w3.org/ns/r2rml#template> ;
+                    rdfs:range xsd:string ],
+                [ void:property <http://isi.edu/integration/karma/dev#isPartOfMapping> ;
+                    rdfs:range <http://isi.edu/integration/karma/dev#R2RMLMapping> ] ;
+            void:uriSpace "http://localhost:8080/source/Subjectmap/" ],
+        [ void:class rdfs:Datatype ;
+            void:entities 3 ;
+            void:exampleResource rdf:XMLLiteral ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property rdfs:subClassOf ;
+                    rdfs:range rdfs:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Datatype/" ],
+        [ void:class owl:SymmetricProperty ;
+            void:entities 4 ;
+            void:exampleResource owl:equivalentProperty ;
+            void:propertyPartition [ void:property rdfs:subPropertyOf ;
+                    rdfs:range rdf:Property ],
+                [ void:property owl:inverseOf ;
+                    rdfs:range owl:SymmetricProperty ],
+                [ void:property <http://proton.semanticweb.org/protonsys#transitiveOver> ;
+                    rdfs:range rdf:Property ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Symmetricproperty/" ],
+        [ void:class owl:DatatypeProperty ;
+            void:entities 55 ;
+            void:exampleResource sft:has_accessibility ;
+            void:propertyPartition [ void:property rdfs:domain ;
+                    rdfs:range owl:Class ],
+                [ void:property rdfs:subPropertyOf ;
+                    rdfs:range rdf:Property ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Datatypeproperty/" ],
+        [ void:class rdf:List ;
+            void:entities 1 ;
+            void:exampleResource () ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/List/" ],
+        [ void:class <http://www.w3.org/ns/r2rml#LogicalTable> ;
+            void:entities 17 ;
+            void:exampleResource <genid-584507d392c54f7eb62d06b42ad788ea3578-node1jc75e438x4> ;
+            void:propertyPartition [ void:property <http://www.w3.org/ns/r2rml#tableName> ;
+                    rdfs:range xsd:string ],
+                [ void:property <http://isi.edu/integration/karma/dev#isPartOfMapping> ;
+                    rdfs:range <http://isi.edu/integration/karma/dev#R2RMLMapping> ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Logicaltable/" ],
+        [ void:class <http://schema.org/Activity> ;
+            void:entities 40 ;
+            void:exampleResource instance:pallavolo ;
+            void:propertyPartition [ void:property sft:has_players_number ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_equipment ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ] ;
+            void:uriSpace "http://localhost:8080/source/Activity/" ],
+        [ void:class rdfs:Class ;
+            void:entities 3 ;
+            void:exampleResource rdf:XMLLiteral ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property rdfs:subClassOf ;
+                    rdfs:range rdfs:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Class/" ],
+        [ void:class sft:stop ;
+            void:entities 4040 ;
+            void:exampleResource <http://localhost:8080/source/Stop/2773> ;
+            void:propertyPartition [ void:property sft:has_coverage ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_name ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_route ;
+                    rdfs:range sft:route ],
+                [ void:property sft:has_city ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_address ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_sportFacility ;
+                    rdfs:range sft:sport_facility ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Stop/" ],
+        [ void:class sft:persona ;
+            void:entities 7 ;
+            void:exampleResource instance:1 ;
+            void:propertyPartition [ void:property sft:has_sex ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_sport ;
+                    rdfs:range sft:sport ],
+                [ void:property sft:has_occupation ;
+                    rdfs:range rdf:langString ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_age ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_name ;
+                    rdfs:range rdf:langString ],
+                [ void:property sft:has_app ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_athlete ;
+                    rdfs:range sft:persona ],
+                [ void:property sft:has_association ;
+                    rdfs:range sft:association ],
+                [ void:property sft:has_driver ;
+                    rdfs:range rdf:langString ] ;
+            void:uriSpace "http://localhost:8080/source/Persona/" ],
+        [ void:class <http://localhost:8080/source/Athlete/2> ;
+            void:entities 4 ;
+            void:exampleResource <genid-766d1a9b2f44495ab0240e771dcf36963542-node1jccalo4lx1> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/2/" ],
+        [ void:class owl:Restriction ;
+            void:entities 1 ;
+            void:exampleResource <node0> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property owl:someValuesFrom ;
+                    rdfs:range owl:Class ],
+                [ void:property owl:onProperty ;
+                    rdfs:range rdf:Property ] ;
+            void:uriSpace "http://localhost:8080/source/Restriction/" ],
+        [ void:class <http://www.w3.org/ns/r2rml#PredicateObjectMap> ;
+            void:entities 33 ;
+            void:exampleResource <http://isi.edu/integration/karma/dev#PredicateObjectMap_13251aee-c240-453e-8102-a60e45d33ad6> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property <http://www.w3.org/ns/r2rml#objectMap> ;
+                    rdfs:range <http://www.w3.org/ns/r2rml#ObjectMap> ],
+                [ void:property <http://www.w3.org/ns/r2rml#predicate> ;
+                    rdfs:range rdf:Property ],
+                [ void:property <http://isi.edu/integration/karma/dev#isPartOfMapping> ;
+                    rdfs:range <http://isi.edu/integration/karma/dev#R2RMLMapping> ] ;
+            void:uriSpace "http://localhost:8080/source/Predicateobjectmap/" ],
+        [ void:class <http://localhost:8080/source/Athlete/pallavolo> ;
+            void:entities 2 ;
+            void:exampleResource <genid-766d1a9b2f44495ab0240e771dcf36963542-node1jccalo4lx2> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Pallavolo/" ],
+        [ void:class <http://localhost:8080/source/Athlete/palestra> ;
+            void:entities 2 ;
+            void:exampleResource <genid-766d1a9b2f44495ab0240e771dcf36963542-node1jccalo4lx8> ;
+            void:propertyPartition [ void:property rdf:type ;
+                    rdfs:range owl:Class ] ;
+            void:uriSpace "http://localhost:8080/source/Palestra/" ],
+        [ void:class sft:path ;
+            void:entities 7846 ;
+            void:exampleResource <http://localhost:8080/source/Path/3724508> ;
+            void:propertyPartition [ void:property sft:has_route ;
+                    rdfs:range sft:route ],
+                [ void:property sft:has_description ;
+                    rdfs:range xsd:string ],
+                [ void:property sft:has_notes ;
+                    rdfs:range xsd:string ],
+                [ void:property rdf:type ;
+                    rdfs:range owl:Class ],
+                [ void:property sft:has_type ;
+                    rdfs:range xsd:string ] ;
+            void:uriSpace "http://localhost:8080/source/Path/" ] ;
+    void:classes 46 ;
+    void:entities 21102 ;
+    void:properties 82 ;
+    void:sparqlEndpoint <http://localhost:7200/repositories/KG-SFT> ;
+    void:triples 199346 ;
+    void:uriSpace "http://localhost:8080/source/" ;
+    foaf:homepage <http://localhost:8080> .
+

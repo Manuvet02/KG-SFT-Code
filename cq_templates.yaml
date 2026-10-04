@@ -1,0 +1,302 @@
+PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+
+templates:
+  - id: T_CQ1
+    cq_ref: CQ1
+    cq_text: "Where is Palaghiaccio Andalo located?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT ?city ?address
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_name "Palaghiaccio Andalo" ;
+              sft:has_city ?city ;
+              sft:has_address ?address .
+      }
+    placeholders:
+      facility_name:
+        domain_class: sft:sport_facility
+        via_property: has_name
+
+  - id: T_CQ2
+    cq_ref: CQ2
+    cq_text: "What sports can be practiced at Palazzetto dello sport?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT
+        (REPLACE(STR(?sport), "http://localhost:8080/source/Sport/","") AS ?sport_name)
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_name "Palazzetto dello sport" ;
+              sft:has_sport ?sport .
+      }
+    placeholders:
+      facility_name:
+        domain_class: sft:sport_facility
+        via_property: has_name
+
+  - id: T_CQ3
+    cq_ref: CQ3
+    cq_text: "What is the capacity of {{facility_name}}?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT ?capacity
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_name "{{facility_name}}" ;
+              sft:has_capacity ?capacity .
+      }
+    placeholders:
+      facility_name:
+        domain_class: sft:sport_facility
+        via_property: has_name
+
+  - id: T_CQ4
+    cq_ref: CQ4
+    cq_text: "Which sports facilities are currently {{status_value}}?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT
+        (REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_status "{{status_value}}" .
+      }
+    placeholders:
+      status_value:
+        domain_class: sft:sport_facility
+        via_property: has_status
+
+  - id: T_CQ5_sbagliata
+    cq_ref: CQ5
+    cq_text: "Which sports facilities regularly host a specific team or association?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT
+        (REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+        (REPLACE(STR(?association), "http://localhost:8080/source/Association/","") AS ?team)
+      WHERE {
+         ?association a sft:association ;
+              sft:has_sport ?sport .
+         {
+           SELECT ?sport (MIN(?sport_facility) AS ?sport_facility)
+           WHERE {
+              ?sport_facility a sft:sport_facility ;
+                   sft:has_sport ?sport .
+           }
+           GROUP BY ?sport
+         }
+      }
+    placeholders: {}
+
+  - id: T_CQ6
+    cq_ref: CQ6
+    cq_text: "Which sports facilities require reservations?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT
+        (REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+      WHERE {
+          ?sport_facility a sft:sport_facility ;
+            sft:has_service ?service;
+            sft:has_name ?spName.
+          ?service a sft:service;
+            sft:has_name "Prenotazione"
+      }
+    placeholders: {}
+
+  - id: T_CQ7
+    cq_ref: CQ7
+    cq_text: "Which sports facilities are accessible to people with disabilities?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT ?spName
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+          sft:has_name ?spName;
+          sft:has_accessibility "yes" .
+      }
+    placeholders: {}
+
+  - id: T_CQ8
+    cq_ref: CQ8
+    cq_text: "What additional services does Club Golf Folgaria offer?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT ?name
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_name ""Club Golf Folgaria"" ;
+              sft:has_service ?service .
+         ?service a sft:service ;
+              sft:has_name ?name .
+      }
+    placeholders:
+      facility_name:
+        domain_class: sft:sport_facility
+        via_property: has_name
+
+  - id: T_CQ9
+    cq_ref: CQ9
+    cq_text: "Which public transport options are available to reach Circolo Tennis Lungo Leno ?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT ?code
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_name "Circolo Tennis Lungo Leno" ;
+              sft:has_meanOfTransport ?mean_of_transport .
+         ?mean_of_transport a sft:mean_of_transport ;
+              sft:has_code ?code .
+      }
+    placeholders:
+      facility_name:
+        domain_class: sft:sport_facility
+        via_property: has_name
+
+  - id: T_CQ10
+    cq_ref: CQ10
+    cq_text: "What is the closest public transport stop to {{facility_name}}?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT
+        (REPLACE(STR(?stop), "http://localhost:8080/source/Stop/","") AS ?stop_id)
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_name "{{facility_name}}" ;
+              sft:has_stop ?stop .
+      }
+    placeholders:
+      facility_name:
+        domain_class: sft:sport_facility
+        via_property: has_name
+
+  - id: T_CQ11
+    cq_ref: CQ11
+    cq_text: "What is the average travel time by public transport to a facility?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT
+        (REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+        ?time
+      WHERE {
+         ?route a sft:route ;
+              sft:has_time ?time .
+         ?sport_facility a sft:sport_facility ;
+              sft:has_meanOfTransport ?mean_of_transport .
+         {
+           SELECT ?mean_of_transport (MIN(?route) AS ?route)
+           WHERE {
+              ?route a sft:route ;
+                   sft:has_meanOfTransport ?mean_of_transport .
+           }
+           GROUP BY ?mean_of_transport
+         }
+      }
+    placeholders: {}
+
+  - id: T_CQ12
+    cq_ref: CQ12
+    cq_text: "Are there bike paths connecting {{facility_name}} to the rest of the city?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT DISTINCT
+        (REPLACE(STR(?path), "http://localhost:8080/source/Path/","") AS ?idPath)
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_name "{{facility_name}}" ;
+              sft:has_meanOfTransport ?mot .
+         {
+           SELECT DISTINCT ?route ?path ?mot
+           WHERE {
+              ?path a sft:path ;
+                   sft:has_route ?route ;
+                   sft:has_type "bike line" .
+           }
+         }
+      }
+    placeholders:
+      facility_name:
+        domain_class: sft:sport_facility
+        via_property: has_name
+
+  - id: T_CQ13
+    cq_ref: CQ13
+    cq_text: "Which sports facilities are located near a specific urban area?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT
+        (REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+        ?address
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_address ?address .
+      }
+    placeholders: {}
+
+  - id: T_CQ14
+    cq_ref: CQ14
+    cq_text: "How can I travel from my town to a {{sport_label}} venue using public transportation?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT
+        (REPLACE(STR(?sport_facility), "http://localhost:8080/source/SportFacility/","") AS ?id)
+        ?code
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_sport <http://localhost:8080/source/Sport/{{sport_id}}> ;
+              sft:has_meanOfTransport ?mean_of_transport .
+         ?mean_of_transport a sft:mean_of_transport ;
+              sft:has_code ?code .
+      }
+    placeholders:
+      sport_id:
+        domain_class: sft:sport
+      sport_label:
+        depends_on: sport_id
+
+  - id: T_CQ15
+    cq_ref: CQ15
+    cq_text: "Which sports venues are accessible by {{path_type}}?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT
+        (REPLACE(STR(?path), "http://localhost:8080/source/Path/","") AS ?id)
+        ?description
+      WHERE {
+         ?path sft:has_type "{{path_type}}" ;
+              sft:has_description ?description .
+      }
+    placeholders:
+      path_type:
+        domain_class: sft:path
+        via_property: has_type
+
+  - id: T_CQ16
+    cq_ref: CQ16
+    cq_text: "Are there any sports facilities that are difficult to access due to limited transportation?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT ?name
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_name ?name ;
+              sft:has_walk_by 0 .
+      }
+    placeholders: {}
+
+  - id: T_CQ17
+    cq_ref: CQ17
+    cq_text: "What are the opening and closing times of {{facility_name}}?"
+    sparql: |
+      PREFIX sft: <http://www.semanticweb.org/KG-SFT#>
+      SELECT ?timetable
+      WHERE {
+         ?sport_facility a sft:sport_facility ;
+              sft:has_name "{{facility_name}}" ;
+              sft:has_timetable ?timetable .
+      }
+    placeholders:
+      facility_name:
+        domain_class: sft:sport_facility
+        via_property: has_name

@@ -1,0 +1,898 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/KG-SFT/"
+     xml:base="http://www.semanticweb.org/KG-SFT/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/KG-SFT"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_app -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_app">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#persona"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#reservation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/KG-SFT#app"/>
+        <rdfs:label>has App</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_association -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_association">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#persona"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_athlete -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_athlete">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#app"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#reservation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/KG-SFT#athlete"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_meanOfTransport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_meanOfTransport">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#route"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/KG-SFT#mean_of_transport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_path -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_path">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#route"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/KG-SFT#path"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_reservation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_reservation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#app"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#persona"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/KG-SFT#reservation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_route -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_route">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#path"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#stop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/KG-SFT#route"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_service -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_service">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_sport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_sport">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#persona"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/KG-SFT#sport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_sportFacility -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_sportFacility">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#stop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_stop -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_stop">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#route"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/KG-SFT#stop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#is_a -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/KG-SFT#is_a"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_accessibility -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_accessibility">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_address">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#stop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_age">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_alimentation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_alimentation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bus"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_bridge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_bridge">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#train_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_calendar -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_calendar">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bus_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_capacity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_capacity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_category -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_category">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_city -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_city">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#stop"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_coaches_number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_coaches_number">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#train"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_code">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#persona"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_construction_year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_construction_year">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#train"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_cost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_cost">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_coverage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_coverage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#stop"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_covered -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_covered">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#train_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_date">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#reservation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bus_stop"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#path"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_developer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_developer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#app"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_driver -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_driver">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#persona"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_electrified -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_electrified">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#train_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_equipment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_equipment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_flooring -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_flooring">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bike_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_foundation_year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_foundation_year">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#path"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#route"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#stop"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_length -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_length">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#route"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_level -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_level">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bike_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_made_by -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_made_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#reservation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_manager -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_manager">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bike_line"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#train_station"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_max_speed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_max_speed">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#train_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#persona"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#stop"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#train_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_notes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_notes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#path"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_number_people -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_number_people">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#reservation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_occupation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_occupation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#persona"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_os -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_os">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#app"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_payment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_payment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#reservation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_players_number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_players_number">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_position -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_position">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bike_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_postcode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_postcode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_president -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_president">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_railway -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_railway">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#train_station"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_route_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_route_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bike_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_route_number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_route_number">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bus_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_sex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_sex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#persona"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_speed_limit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_speed_limit">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bus_road"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_status -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_status">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#mean_of_transport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_stops -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_stops">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bus_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_stops_time -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_stops_time">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bus_line"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_time -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_time">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#reservation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#route"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_timetable -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_timetable">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#association"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bike"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#path"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#train"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_version -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_version">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#app"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_voltage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_voltage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#train_railway"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_walk_by -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_walk_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#sport_facility"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_wheelchair_boarding -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_wheelchair_boarding">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bus_line"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bus_stop"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#has_year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/KG-SFT#has_year">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/KG-SFT#bus"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/Activity -->
+
+    <owl:Class rdf:about="http://schema.org/Activity"/>
+    
+
+
+    <!-- http://schema.org/Entity -->
+
+    <owl:Class rdf:about="http://schema.org/Entity"/>
+    
+
+
+    <!-- http://schema.org/Object -->
+
+    <owl:Class rdf:about="http://schema.org/Object"/>
+    
+
+
+    <!-- http://schema.org/Place -->
+
+    <owl:Class rdf:about="http://schema.org/Place"/>
+    
+
+
+    <!-- http://schema.org/Role -->
+
+    <owl:Class rdf:about="http://schema.org/Role"/>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#app -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#app">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+        <rdfs:label>App</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#association -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#association">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Role"/>
+        <rdfs:comment xml:lang="en">A group of people that practices a sport</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#athlete -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#athlete">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#persona"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#bike -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#bike">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#mean_of_transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#bike_line -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#bike_line">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#path"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#bus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#bus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#mean_of_transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#bus_line -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#bus_line">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#bus_line_suburban -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#bus_line_suburban">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#bus_line"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#bus_line_urban -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#bus_line_urban">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#bus_line"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#bus_road -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#bus_road">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#path"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#bus_stop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#bus_stop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#bus_stop_suburban -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#bus_stop_suburban">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#bus_stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#bus_stop_urban -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#bus_stop_urban">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#bus_stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#mean_of_transport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#mean_of_transport">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Object"/>
+        <rdfs:comment xml:lang="en">Veicle type</rdfs:comment>
+        <rdfs:label>Sport Facility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#path -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#path">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:comment xml:lang="en">Physical route of means of transport</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#persona">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Entity"/>
+        <rdfs:comment xml:lang="en">Defines a person</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#reservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#reservation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#route -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#route">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Role"/>
+        <rdfs:comment xml:lang="en">Transport routes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#service">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Object"/>
+        <rdfs:comment xml:lang="en">A service that the facility offers</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#sport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#sport">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Activity"/>
+        <rdfs:comment xml:lang="en">Defines the sport</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#sport_facility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#sport_facility">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/KG-SFT#has_service"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/KG-SFT#service"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Place where a sport is practiced</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#stop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#stop">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:comment xml:lang="en">Transport stops</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#train -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#train">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#mean_of_transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#train_line -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#train_line">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#train_railway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#train_railway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#path"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/KG-SFT#train_station -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/KG-SFT#train_station">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/KG-SFT#stop"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
