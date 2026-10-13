@@ -1,9 +1,6 @@
 """
 eval_generation/run_t2s_eval.py
-
-Python-API equivalent of run_t2s_eval.sh, using t2smetrics.run_experiments
-directly instead of shelling out to the CLI. Same config, same prioritized
-metric subset -- pick whichever fits your workflow better.
+Run the T2S evaluation (SPARQL query execution + answer set comparison) on a JSONL file of generated SPARQL queries.
 """
 
 from __future__ import annotations
@@ -14,8 +11,6 @@ print("cwd:", os.getcwd())
 DATASET_NAME = "sparqllm"
 INPUT_JSONL = "t2s_input.jsonl"
 
-# See the note in run_t2s_eval.sh: confirm this is the real SPARQL query
-# endpoint (GraphDB's own port is usually 7200/repositories/KG-SFT;
 ENDPOINT_URL = "http://localhost:7200/repositories/KG-SFT"
 
 METRICS = [

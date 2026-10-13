@@ -1,22 +1,10 @@
 """
 eval_generation/grounding.py
 
-Step 2 of the eval-generation pipeline (mail 1.3.1.2 - Grounding).
-
-For each template, walk its placeholders one at a time (in dependency order),
-sample a concrete value with a small SELECT DISTINCT scoped to that
-placeholder's declared class/property, and substitute it into the template
-immediately before moving to the next placeholder ("step-wise grounding",
-per FlexKBQA). This avoids the combinatorial blow-up of grounding every
-placeholder independently and lets an earlier binding constrain a later one
-(see depends_on below).
+For each template, walk its placeholders one at a time, this avoids the combinatorial blow-up of grounding every
+placeholder independently and lets an earlier binding constrain a later one.
 
 No LLM is used anywhere in this module.
-
-Output: a list of GroundedInstance objects, each holding an executable,
-schema-conformant SPARQL query ("golden") plus the CQ text with its
-placeholders filled in (used later as a seed hint for Step 3's LLM prompt,
-not as the final NL question).
 """
 
 from __future__ import annotations
@@ -39,16 +27,7 @@ for p in [eval_dir, app_dir, backend_dir]:
         sys.path.insert(0, p)
 
 
-# ---------------------------------------------------------------------------
 # GraphDB backend adapter
-# ---------------------------------------------------------------------------
-# ASSUMPTION: graphdb_client.py exposes a client with a single method
-#     execute(query: str) -> list[dict[str, str]]
-# where each dict maps SPARQL variable name -> string value (URIs unwrapped
-# to plain strings, literals as their lexical form). Adjust the call in
-# GraphDBBackend.execute() if your actual client's method/return shape
-# differs (e.g. query() returning a raw SPARQLWrapper JSON result).
-
 class GraphDBBackend:
     def __init__(self, client):
         self._client = client
@@ -59,20 +38,6 @@ class GraphDBBackend:
 
 
 def _normalize_sparql_json(raw):
-    """SPARQLWrapper's .convert() returns the raw SPARQL 1.1 Query Results
-    JSON envelope, not a flat list:
-        SELECT -> {"head": {...}, "results": {"bindings": [
-                       {var: {"type": ..., "value": ...}, ...}, ...
-                   ]}}
-        ASK    -> {"head": {...}, "boolean": true/false}
-
-    Normalize to what the rest of this module expects:
-        SELECT -> list[dict[str, str]]   (flat var -> value, no type wrapper)
-        ASK    -> bool
-
-    Anything else (already-flat list, plain string list from a different
-    client) passes through unchanged.
-    """
     if isinstance(raw, dict):
         if "boolean" in raw:
             return raw["boolean"]
@@ -85,9 +50,7 @@ def _normalize_sparql_json(raw):
     return raw
 
 
-# ---------------------------------------------------------------------------
 # Data model
-# ---------------------------------------------------------------------------
 
 @dataclass
 class GroundedInstance:
@@ -104,10 +67,7 @@ class GroundingExhausted(Exception):
     within the retry budget."""
 
 
-# ---------------------------------------------------------------------------
 # Template loading
-# ---------------------------------------------------------------------------
-
 def load_templates(path: str) -> list[dict]:
     with open(path, encoding="utf-8") as f:
         data = yaml.safe_load(f)
@@ -134,9 +94,7 @@ def _topo_order(placeholders: dict) -> list[str]:
     return order
 
 
-# ---------------------------------------------------------------------------
 # Per-placeholder grounding
-# ---------------------------------------------------------------------------
 
 def _is_ask(sparql: str) -> bool:
     # crude but sufficient: ASK queries don't have a SELECT clause
@@ -152,12 +110,6 @@ def _local_name(value: str) -> str:
 
 
 def _build_scoped_query(spec: dict) -> str:
-    """SELECT DISTINCT scoped to the placeholder's declared class/property,
-    per the mail's instruction. Two shapes:
-      - via_property set  -> sample a literal value of that property
-      - via_property unset -> sample an instance IRI of the class itself
-    Blank nodes are always excluded (FILTER isIRI/isLiteral) so grounding
-    never pulls in the known Karma blank-node artifacts."""
     domain_class = spec["domain_class"]
     via_property = spec.get("via_property")
     if via_property:
@@ -224,9 +176,7 @@ def _extract_values(rows, var: str) -> list[str]:
     return values
 
 
-# ---------------------------------------------------------------------------
-# Per-template grounding (step-wise, with empty-result discard/retry)
-# ---------------------------------------------------------------------------
+# Per-template grounding
 
 def ground_template(
     backend: GraphDBBackend,
@@ -236,19 +186,10 @@ def ground_template(
     keep_empty: bool = False,
     keep_false: bool = True,
 ) -> GroundedInstance:
-    """Walk placeholders in dependency order, binding one at a time. After
-    all placeholders are bound, substitute into the template's own sparql
-    and execute the FULL grounded query.
-
-    For SELECT queries: an empty result set discards the attempt and
-    retries with fresh samples (unless keep_empty=True, for deliberately
-    testing empty-result handling).
-
-    For ASK queries: backend.execute() is expected to return a bool. A
-    False result discards the attempt and retries (unless keep_false=True
-    -- e.g. you deliberately want some "no" answers in the eval set, since
-    T4-style boolean questions should exercise both outcomes, just not by
-    accident)."""
+    """ Walk placeholders in dependency order, binding one at a time. After
+        all placeholders are bound, substitute into the template's own sparql
+        and execute the FULL grounded query."""
+    
     placeholders = template.get("placeholders") or {}
     order = _topo_order(placeholders)
 
@@ -318,11 +259,6 @@ def _make_instance(template, bound, question_seed, golden_sparql, attempt) -> Gr
         bindings=bound,
     )
 
-
-# ---------------------------------------------------------------------------
-# Dataset-level driver
-# ---------------------------------------------------------------------------
-
 def generate_groundings(
     backend: GraphDBBackend,
     templates: list[dict],
@@ -330,15 +266,8 @@ def generate_groundings(
     seed: int = 42,
     skip_ids: set[str] | None = None,
 ) -> list[GroundedInstance]:
-    """Ground every template n_per_template times (templates with zero
-    placeholders naturally collapse to a single unique instance, since
-    there's nothing to vary -- repeated attempts will just produce the
-    same golden query, so those are deduplicated by golden_sparql text).
-
-    skip_ids lets you exclude templates that aren't ready yet (e.g. a
-    blocked query, or a property name still pending live confirmation)
-    without editing the YAML bank.
-    """
+    """ Ground every template n_per_template times with different random samples. 
+        The skip_ids lets you exclude templates that aren't ready yet """
     rng = random.Random(seed)
     skip_ids = skip_ids or set()
     instances: list[GroundedInstance] = []
@@ -379,9 +308,6 @@ def write_groundings_jsonl(instances: list[GroundedInstance], out_path: str) -> 
             }, ensure_ascii=False) + "\n")
 
 
-# ---------------------------------------------------------------------------
-# Example wiring (adjust the import to your actual graphdb_client.py)
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
     from app.client import GraphDBClient  # your existing MCP client

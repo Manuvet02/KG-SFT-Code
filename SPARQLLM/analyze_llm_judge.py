@@ -1,15 +1,7 @@
 """
 eval_generation/analyze_llm_judge.py
 
-Turns llm_judge_results.jsonl into something you can actually put in the
-report: an overall summary, a per-CQ breakdown (to spot which questions the
-system struggles with), and the worst-scoring examples with their rationale
-(for the qualitative discussion section).
-
-Input:  llm_judge_results.jsonl (from llm_judge.py)
-Output: llm_judge_report.md     -- markdown tables + worst-case examples
-        llm_judge_chart.png      -- bar chart of the three mean dimensions
-                                     (requires matplotlib: pip install matplotlib)
+Analyze the results of the LLM-as-judge evaluation
 """
 
 from __future__ import annotations
@@ -43,8 +35,6 @@ def per_cq_breakdown(results: list[dict]) -> dict[str, dict]:
 
 
 def worst_examples(results: list[dict], n: int = 5) -> list[dict]:
-    """Lowest correctness first -- that's the dimension most worth discussing
-    qualitatively (efficiency/readability issues are less critical)."""
     return sorted(results, key=lambda r: r["correctness"])[:n]
 
 

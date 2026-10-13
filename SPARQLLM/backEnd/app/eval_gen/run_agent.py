@@ -1,21 +1,9 @@
 """
 eval_generation/run_agent.py
 
-Round-trips every generated_question (from question_gen.py) through the real
-SparqLLMAgent to get the SPARQL it actually produces -- the "generated" field
-t2s-metrics compares against "golden". This replaces the manual CSV-filling
-step: the pipeline is now template -> ground -> NL question -> agent -> t2s
-with no hand-editing in between.
-
-agent.agent.SparqLLMAgent (backend/app/agent/agent.py) is synchronous:
-    agent = SparqLLMAgent()
-    res = agent.ask(question)   # -> {"query": "...", "summary": "..."}
-
-Input:  questions.jsonl   (from question_gen.py)
-Output: agent_runs.jsonl   -- full record + generated_sparql + agent_summary
-        t2s_input.jsonl     -- minimal {id, golden, generated, order_matters}
-                               ready for run_t2s_eval.py / run_t2s_eval.sh
+Run the SparqLLMAgent on a set of generated questions and save the results.
 """
+
 
 from __future__ import annotations
 
@@ -34,9 +22,7 @@ for _p in (app_dir, backend_dir):
 from agent.agent import SparqLLMAgent  # noqa: E402  (import must follow path setup)
 
 
-# ---------------------------------------------------------------------------
 # JSONL helpers
-# ---------------------------------------------------------------------------
 
 def load_jsonl(path: str) -> list[dict]:
     with open(path, encoding="utf-8") as f:
@@ -54,10 +40,7 @@ def write_jsonl(records: list[dict], path: str) -> None:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
 
-# ---------------------------------------------------------------------------
-# Agent round-trip, with the same resilience lessons from question_gen.py:
-# retry-with-backoff on failures, incremental writes, resumable on crash.
-# ---------------------------------------------------------------------------
+# Agent round-trip- retry-with-backoff on failures, incremental writes, resumable on crash.
 
 def run_one(agent: SparqLLMAgent, question: str, max_retries: int = 2) -> dict | None:
     """Returns {"query": ..., "summary": ...} or None after exhausting retries."""
@@ -122,9 +105,7 @@ def run_all(
 
 
 def export_t2s_input(runs_path: str, t2s_path: str) -> None:
-    """Converts the completed agent_runs.jsonl into the minimal schema
-    t2s-metrics expects. Re-run this alone (without run_all) if you just
-    want to re-export after manually tweaking order_matters on a few rows."""
+    """Converts the completed agent_runs.jsonl into the minimal schema that t2s-metrics expects. """
     if not os.path.exists(runs_path):
         print(f"[run_agent] {runs_path} not found, nothing to export yet.")
         return

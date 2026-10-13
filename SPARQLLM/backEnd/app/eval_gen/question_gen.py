@@ -1,20 +1,8 @@
 """
 eval_generation/question_gen.py
 
-Step 3 of the eval-generation pipeline (mail 1.3.1.3 - Question generation).
-
-Feeds each grounded query (Step 2 output) + a few hand-written (query,
-question) pairs from the real 17 CQs + a relevant schema fragment to an
-LLM, and asks it to produce the natural-language question a human would
-have asked to get that query. This is the first and only step where an
-LLM is involved.
-
-openrouter_client.py exposes a single module-level async function:
-    async def ask_llm(prompt: str, system: str | None = None) -> str
-so this module is async end-to-end (no client object to wrap).
-
-Input:  groundings.jsonl (from grounding.py)
-Output: questions.jsonl  -- same records + a "generated_question" field
+Feeds each grounded query + a few hand-written pairs from the real 17 CQs + a relevant schema fragment to an LLM
+and asks it to produce the natural-language question a human wouldhave asked to get that query.
 """
 
 from __future__ import annotations
@@ -33,19 +21,6 @@ backend_dir = os.path.dirname(app_dir)
 for p in [eval_dir, app_dir, backend_dir]:
     if p not in sys.path:
         sys.path.insert(0, p)
-
-
-# Free-tier models only -- do not route SmartUniTn or personal data through
-# them. Everything in this pipeline (schema fragments, grounded SPARQL) is
-# synthetic/public KG-SFT content, so that's fine here. The actual model
-# used is whatever MODEL is set to in openrouter_client.py's environment.
-
-
-# ---------------------------------------------------------------------------
-# Few-shot pairs -- real (question, SPARQL) pairs from the 17 validated CQs.
-# A handful spanning single-hop, filtered, two-hop and aggregate shapes, so
-# the model sees your team's actual question style, not templated echoes.
-# ---------------------------------------------------------------------------
 
 FEW_SHOT_PAIRS = [
     {
@@ -87,10 +62,7 @@ SELECT ?time WHERE {
 ]
 
 
-# ---------------------------------------------------------------------------
-# Schema fragment -- confirmed classes/properties, keyed by the sft: tokens
-# actually touched by a given golden query (see extract_touched_terms).
-# ---------------------------------------------------------------------------
+# Schema fragment -- confirmed classes/properties, keyed by the sft: tokens actually touched by a given golden query (see extract_touched_terms).
 
 SCHEMA_FRAGMENTS: dict[str, str] = {
     "sport_facility": (
@@ -122,9 +94,7 @@ def build_schema_fragment(sparql: str) -> str:
     return "\n".join(SCHEMA_FRAGMENTS[t] for t in terms)
 
 
-# ---------------------------------------------------------------------------
 # Prompting
-# ---------------------------------------------------------------------------
 
 SYSTEM_PROMPT = """You write natural language questions that a person would ask \
 to get the answer to a given SPARQL query, over a knowledge graph about sports \
@@ -159,10 +129,6 @@ Now generate the question for this SPARQL query:
 {golden_sparql}"""
 
 
-# ---------------------------------------------------------------------------
-# Post-processing / light sanity check (full validation is Step 4, separate)
-# ---------------------------------------------------------------------------
-
 def clean_question(raw: str) -> str:
     text = raw.strip().strip('"').strip()
     # drop a leading "Question:" if the model echoes the label
@@ -173,10 +139,6 @@ def clean_question(raw: str) -> str:
 def looks_valid(question: str) -> bool:
     return bool(question) and question.strip().endswith("?") and "\n" not in question.strip()
 
-
-# ---------------------------------------------------------------------------
-# Driver (async, since ask_llm is async)
-# ---------------------------------------------------------------------------
 
 async def generate_one_question(
     ask_llm_fn,
@@ -199,9 +161,7 @@ async def generate_questions(
     concurrency: int = 5,
 ) -> list[dict]:
     """Runs with a small concurrency cap (free-tier OpenRouter models are
-    rate-limited) rather than firing all requests at once. Order of the
-    output list matches the order groundings were completed in, not the
-    input order -- sort by 'id' afterward if you need input order back."""
+    rate-limited) rather than firing all requests at once. """
     semaphore = asyncio.Semaphore(concurrency)
     results: list[dict] = []
 
@@ -229,10 +189,6 @@ def write_questions_jsonl(records: list[dict], out_path: str) -> None:
         for rec in records:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
-
-# ---------------------------------------------------------------------------
-# Entry point
-# ---------------------------------------------------------------------------
 
 async def main():
     from mcp.openrouter_client import ask_llm, LOCAL_MODEL  # your real, async, module-level function

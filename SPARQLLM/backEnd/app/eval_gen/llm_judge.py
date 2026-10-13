@@ -3,20 +3,10 @@ eval_generation/llm_judge.py
 
 LLM-as-a-judge metric
 
-Rubric :
-    correctness  -- does the generated query correctly implement the intent
-                     of the natural-language question, judged against the
-                     golden query's intent (not string-identical -- different
-                     variable names / equivalent join orders are fine)
-    efficiency    -- does it avoid unnecessary joins, subqueries, or overly
-                      broad patterns compared to the golden query
-    readability    -- is it well-structured, sensible variable names, not
-                       needlessly convoluted
-
-Input:  agent_runs.jsonl (from run_agent.py -- has golden_sparql,
-        generated_sparql, generated_question all together)
-Output: llm_judge_results.jsonl (per-instance scores + rationale)
-        llm_judge_summary.json   (mean per dimension, printed + saved)
+Metrics :
+    correctness  -- does the generated query correctly 
+    efficiency    -- does it avoid unnecessary joins, subqueries compared to the golden query
+    readability    -- is it well-structured, sensible variable names, not needlessly convoluted
 """
 
 from __future__ import annotations
@@ -72,10 +62,7 @@ Generated query:
 Score the generated query now."""
 
 
-# ---------------------------------------------------------------------------
 # Response parsing -- robust to a model wrapping the JSON in prose/markdown
-# ---------------------------------------------------------------------------
-
 def parse_judge_response(raw: str) -> dict | None:
     text = raw.strip()
     # strip ```json ... ``` fences if present
@@ -102,12 +89,6 @@ def parse_judge_response(raw: str) -> dict | None:
         return None
     data.setdefault("rationale", "")
     return data
-
-
-# ---------------------------------------------------------------------------
-# Driver (async, same resilience pattern as question_gen.py: retry with
-# backoff, bounded concurrency, incremental write, resumable on crash)
-# ---------------------------------------------------------------------------
 
 async def judge_one(ask_llm_fn, inst: dict, max_retries: int = 2) -> dict | None:
     prompt = build_judge_prompt(
@@ -193,12 +174,8 @@ def summarize(results: list[dict]) -> dict:
     return summary
 
 
-# ---------------------------------------------------------------------------
-# Entry point
-# ---------------------------------------------------------------------------
-
 async def main():
-    from mcp.openrouter_client import ask_llm, LOCAL_MODEL , MODEL  # your real, async, module-level function
+    from mcp.openrouter_client import ask_llm, LOCAL_MODEL , MODEL 
 
     print(f"[llm_judge] using model: {MODEL}")
     runs = load_jsonl("agent_runs.jsonl")
