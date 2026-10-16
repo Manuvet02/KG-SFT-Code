@@ -7,7 +7,6 @@ load_dotenv()
 API_KEY = os.environ.get("OPENAI_API_KEY")
 BASE_URL = os.environ.get("OPENAI_BASE_URL", "https://openrouter.ai/api/v1")
 MODEL = os.environ.get("MODEL", "openrouter/free")
-LOCAL_MODEL = os.environ.get("MODEL_LOCAL", "unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_M")
 
 #Manda un prompt al modello configurato su OpenRouter e ritorna il testo generato
 async def ask_llm(prompt: str, system: str | None = None) -> str:

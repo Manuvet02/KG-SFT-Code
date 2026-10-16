@@ -191,14 +191,14 @@ def write_questions_jsonl(records: list[dict], out_path: str) -> None:
 
 
 async def main():
-    from mcp.openrouter_client import ask_llm, LOCAL_MODEL  # your real, async, module-level function
+    from mcp.openrouter_client import ask_llm, LOCAL_MODEL , MODEL  # your real, async, module-level function
 
-    print(f"[question_gen] using model: {LOCAL_MODEL}")
+    print(f"[question_gen] using model: {MODEL}")
     groundings = load_groundings("groundings.jsonl")
     print(f"[question_gen] {len(groundings)} groundings to process")
     records = await generate_questions(ask_llm, groundings)
     records.sort(key=lambda r: r["id"])  # restore input order after concurrent gather
-    write_questions_jsonl(records, "questions.jsonl")
+    write_questions_jsonl(records, f"questions.jsonl")
     print(f"Generated {len(records)}/{len(groundings)} questions -> questions.jsonl")
 
 

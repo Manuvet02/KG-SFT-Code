@@ -1,5 +1,5 @@
 """
-text_overlap_metrics.py
+BertRogueMetrics.py
 
 ROUGE-1/2/L and BERTScore between golden_sparql and generated_sparql
 
@@ -79,7 +79,7 @@ def write_bar_chart(summary: dict, path: str) -> None:
     plt.bar(dims, scores, color='skyblue')
     plt.ylim(0, 1)
     plt.ylabel("Score")
-    plt.title("Text Overlap Metrics Summary")
+    plt.title("BERTScore and ROUGE Scores Summary")
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.savefig(path)
@@ -88,11 +88,11 @@ def write_bar_chart(summary: dict, path: str) -> None:
 if __name__ == "__main__":
     records = load_jsonl("t2s_input.jsonl")
     results = compute_all(records)
-    write_jsonl(results, "text_overlap_results.jsonl")
+    write_jsonl(results, "BertRogueResults.jsonl")
 
     summary = summarize(results)
-    with open("text_overlap_summary.json", "w", encoding="utf-8") as f:
+    with open("BertRogueSummary.json", "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)
 
-    print(f"\n[text_overlap] {len(results)}/{len(records)} scored -> text_overlap_results.jsonl")
-    write_bar_chart(summary, "text_overlap_summary.png")
+    print(f"\n[text_overlap] {len(results)}/{len(records)} scored -> BertRogueResults.jsonl")
+    write_bar_chart(summary, "BertRogueSummary.png")

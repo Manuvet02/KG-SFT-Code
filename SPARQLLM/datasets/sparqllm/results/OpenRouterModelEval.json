@@ -1,0 +1,1186 @@
+[
+  {
+    "dataset": "sparqllm",
+    "system_name": "System with JSONL t2s_input.jsonl",
+    "metrics": {
+      "answerset_recall": 0.6742467843735339,
+      "query_exact_match": 0.0,
+      "answerset_precision": 0.5286965089289634,
+      "answerset_f1": 0.5292335798779307,
+      "query_execution": 1.0,
+      "sp-f1": 0.7651065260292764
+    },
+    "per_query_results": [
+      {
+        "id": "T_CQ6_ask-01-2959",
+        "metric": "answerset_recall",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ6_ask-01-5252",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ4-01-2242",
+        "metric": "answerset_precision",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ7_ask-01-1259",
+        "metric": "answerset_f1",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ1-02-2718",
+        "metric": "answerset_f1",
+        "score": 0.8
+      },
+      {
+        "id": "T_CQ10-01-7983",
+        "metric": "answerset_f1",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ12-01-5016",
+        "metric": "answerset_precision",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ3-01-5697",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ2-01-0634",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ3-01-5697",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ12-01-5016",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ3-01-5556",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ6_ask-01-1951",
+        "metric": "sp-f1",
+        "score": 0.6557377049180326
+      },
+      {
+        "id": "T_CQ7_ask-01-1259",
+        "metric": "sp-f1",
+        "score": 0.5416666666666666
+      },
+      {
+        "id": "T_CQ10-01-7983",
+        "metric": "sp-f1",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ11-01-5736",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ5-01-5736",
+        "metric": "answerset_precision",
+        "score": 0.9574468085106383
+      },
+      {
+        "id": "T_CQ9-01-8260",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ1-04-5015",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ10-01-7983",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ6_ask-01-2959",
+        "metric": "answerset_precision",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ12-01-3397",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ9-01-9046",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ3-01-5556",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ5-01-5736",
+        "metric": "sp-f1",
+        "score": 0.7391304347826086
+      },
+      {
+        "id": "T_CQ1-04-5015",
+        "metric": "answerset_precision",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ6_ask-01-1951",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ7_ask-01-7747",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ1-02-2718",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ3-01-9712",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ9-01-9046",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ4-01-0904",
+        "metric": "answerset_precision",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ12-01-5016",
+        "metric": "answerset_f1",
+        "score": 0.2573158425832493
+      },
+      {
+        "id": "T_CQ15-01-3844",
+        "metric": "answerset_f1",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ9-01-8260",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ9-01-8260",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ17-01-1227",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ2-01-0211",
+        "metric": "answerset_f1",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ8-01-6786",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ15-01-7506",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ2-01-5161",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ4-01-2242",
+        "metric": "sp-f1",
+        "score": 0.8615384615384615
+      },
+      {
+        "id": "T_CQ9-01-9046",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ17-01-0747",
+        "metric": "sp-f1",
+        "score": 0.7058823529411764
+      },
+      {
+        "id": "T_CQ3-01-9712",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ10-01-2695",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ2-01-0211",
+        "metric": "sp-f1",
+        "score": 0.9014084507042254
+      },
+      {
+        "id": "T_CQ7-01-5736",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ15-01-3844",
+        "metric": "sp-f1",
+        "score": 0.9523809523809523
+      },
+      {
+        "id": "T_CQ5-01-5736",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ15-01-7506",
+        "metric": "answerset_f1",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ15-01-3277",
+        "metric": "sp-f1",
+        "score": 0.9206349206349207
+      },
+      {
+        "id": "T_CQ17-01-1227",
+        "metric": "sp-f1",
+        "score": 0.7058823529411764
+      },
+      {
+        "id": "T_CQ9-01-8783",
+        "metric": "sp-f1",
+        "score": 0.7692307692307693
+      },
+      {
+        "id": "T_CQ6_ask-01-5252",
+        "metric": "sp-f1",
+        "score": 0.6557377049180326
+      },
+      {
+        "id": "T_CQ17-01-1227",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ8-01-6786",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ10-01-8289",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ17-01-0747",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ10-01-7983",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ7_ask-01-1259",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ4-01-2242",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ6_ask-01-5252",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ5-01-5736",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ5-01-5736",
+        "metric": "answerset_recall",
+        "score": 0.9574468085106383
+      },
+      {
+        "id": "T_CQ17-01-1227",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ8-01-6786",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ9-01-8783",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ2-01-0634",
+        "metric": "answerset_f1",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ11-01-5736",
+        "metric": "answerset_precision",
+        "score": 0.9996200607902735
+      },
+      {
+        "id": "T_CQ12-01-7544",
+        "metric": "answerset_recall",
+        "score": 0.012159814707585408
+      },
+      {
+        "id": "T_CQ15-01-3277",
+        "metric": "answerset_f1",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ7_ask-01-1259",
+        "metric": "answerset_precision",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ10-01-7983",
+        "metric": "answerset_precision",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ6_ask-01-5252",
+        "metric": "answerset_f1",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ10-01-7983",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ1-02-2718",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ4-01-0904",
+        "metric": "sp-f1",
+        "score": 0.8615384615384615
+      },
+      {
+        "id": "T_CQ13-01-5736",
+        "metric": "answerset_precision",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ3-01-5697",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ3-01-9712",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ13-01-5736",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ7_ask-01-5767",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ12-01-3397",
+        "metric": "answerset_recall",
+        "score": 0.1795020266357846
+      },
+      {
+        "id": "T_CQ11-01-5736",
+        "metric": "answerset_recall",
+        "score": 0.9988610478359908
+      },
+      {
+        "id": "T_CQ6-01-5736",
+        "metric": "answerset_f1",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ7_ask-01-5767",
+        "metric": "sp-f1",
+        "score": 0.5416666666666666
+      },
+      {
+        "id": "T_CQ12-01-3397",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ6_ask-01-1951",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ10-01-8289",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ17-01-3886",
+        "metric": "answerset_precision",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ12-01-3397",
+        "metric": "sp-f1",
+        "score": 0.6338028169014085
+      },
+      {
+        "id": "T_CQ3-01-5556",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ7_ask-01-7747",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ8-01-8983",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ15-01-3844",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ4-01-0904",
+        "metric": "answerset_f1",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ12-01-7544",
+        "metric": "answerset_f1",
+        "score": 0.02402745995423341
+      },
+      {
+        "id": "T_CQ10-01-2695",
+        "metric": "sp-f1",
+        "score": 0.810126582278481
+      },
+      {
+        "id": "T_CQ6_ask-01-1951",
+        "metric": "answerset_f1",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ7_ask-01-7747",
+        "metric": "answerset_f1",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ15-01-7506",
+        "metric": "sp-f1",
+        "score": 0.9206349206349207
+      },
+      {
+        "id": "T_CQ12-01-5016",
+        "metric": "sp-f1",
+        "score": 0.8737864077669903
+      },
+      {
+        "id": "T_CQ17-01-0747",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ3-01-9712",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ15-01-3844",
+        "metric": "answerset_precision",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ15-01-3844",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ15-01-7506",
+        "metric": "answerset_recall",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ7-01-5736",
+        "metric": "answerset_f1",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ2-01-0211",
+        "metric": "answerset_precision",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ9-01-8783",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ1-04-5015",
+        "metric": "answerset_f1",
+        "score": 0.8
+      },
+      {
+        "id": "T_CQ9-01-9046",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ14-02-6801",
+        "metric": "sp-f1",
+        "score": 0.8210526315789474
+      },
+      {
+        "id": "T_CQ10-01-8289",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ4-01-2242",
+        "metric": "answerset_recall",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ8-01-8983",
+        "metric": "answerset_f1",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ8-01-8983",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ2-01-0211",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ15-01-3844",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ14-02-6801",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ15-01-7506",
+        "metric": "answerset_precision",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ15-01-3277",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ7_ask-01-1259",
+        "metric": "answerset_recall",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ6_ask-01-2959",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ9-01-8783",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ13-01-5736",
+        "metric": "sp-f1",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ17-01-0747",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ2-01-0634",
+        "metric": "sp-f1",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ6_ask-01-5252",
+        "metric": "answerset_recall",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ17-01-3886",
+        "metric": "sp-f1",
+        "score": 0.7058823529411764
+      },
+      {
+        "id": "T_CQ3-01-5556",
+        "metric": "sp-f1",
+        "score": 0.7058823529411764
+      },
+      {
+        "id": "T_CQ4-01-2242",
+        "metric": "answerset_f1",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ7_ask-01-5767",
+        "metric": "answerset_recall",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ17-01-1227",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ4-01-0904",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ8-01-6786",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ9-01-8783",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ6-01-5736",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ7_ask-01-5767",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ6-01-5736",
+        "metric": "answerset_precision",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ6_ask-01-5252",
+        "metric": "answerset_precision",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ4-01-0904",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ11-01-5736",
+        "metric": "answerset_f1",
+        "score": 0.9992404101785035
+      },
+      {
+        "id": "T_CQ7_ask-01-5767",
+        "metric": "answerset_f1",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ6_ask-01-1951",
+        "metric": "answerset_recall",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ7_ask-01-7747",
+        "metric": "answerset_recall",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ3-01-9712",
+        "metric": "sp-f1",
+        "score": 0.7058823529411764
+      },
+      {
+        "id": "T_CQ1-02-2718",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ9-01-9046",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ10-01-2695",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ7_ask-01-7747",
+        "metric": "sp-f1",
+        "score": 0.5416666666666666
+      },
+      {
+        "id": "T_CQ14-02-6801",
+        "metric": "answerset_precision",
+        "score": 0.9954303122619954
+      },
+      {
+        "id": "T_CQ9-01-9046",
+        "metric": "sp-f1",
+        "score": 0.7692307692307693
+      },
+      {
+        "id": "T_CQ2-01-0211",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ6-01-5736",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ8-01-6786",
+        "metric": "sp-f1",
+        "score": 0.7692307692307693
+      },
+      {
+        "id": "T_CQ14-02-6801",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ6_ask-01-1951",
+        "metric": "answerset_precision",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ7_ask-01-7747",
+        "metric": "answerset_precision",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ9-01-8260",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ7-01-5736",
+        "metric": "sp-f1",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ8-01-8983",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ17-01-3886",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ3-01-9712",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ7-01-5736",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ4-01-2242",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ1-02-2718",
+        "metric": "sp-f1",
+        "score": 0.711864406779661
+      },
+      {
+        "id": "T_CQ2-01-0634",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ2-01-0211",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ9-01-8260",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ14-02-6801",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ7_ask-01-1259",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ8-01-8983",
+        "metric": "answerset_precision",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "T_CQ1-04-5015",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ10-01-8289",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ17-01-0747",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ6_ask-01-2959",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ13-01-5736",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ17-01-3886",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ12-01-7544",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ15-01-3277",
+        "metric": "answerset_recall",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ2-01-0634",
+        "metric": "answerset_precision",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ17-01-0747",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ6_ask-01-2959",
+        "metric": "answerset_f1",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ12-01-3397",
+        "metric": "answerset_precision",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ12-01-5016",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ17-01-3886",
+        "metric": "answerset_f1",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ17-01-3886",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ2-01-5161",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ3-01-5556",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ4-01-0904",
+        "metric": "answerset_recall",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ10-01-2695",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ11-01-5736",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ15-01-3277",
+        "metric": "answerset_precision",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ5-01-5736",
+        "metric": "answerset_f1",
+        "score": 0.9574468085106385
+      },
+      {
+        "id": "T_CQ13-01-5736",
+        "metric": "answerset_f1",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ9-01-8783",
+        "metric": "answerset_precision",
+        "score": 0.5
+      },
+      {
+        "id": "T_CQ6_ask-01-2959",
+        "metric": "sp-f1",
+        "score": 0.45454545454545453
+      },
+      {
+        "id": "T_CQ6-01-5736",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ1-04-5015",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ12-01-7544",
+        "metric": "sp-f1",
+        "score": 0.624113475177305
+      },
+      {
+        "id": "T_CQ14-02-6801",
+        "metric": "answerset_f1",
+        "score": 0.9977099236641221
+      },
+      {
+        "id": "T_CQ13-01-5736",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ2-01-5161",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ2-01-0634",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ10-01-2695",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ7-01-5736",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ7_ask-01-5767",
+        "metric": "answerset_precision",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ9-01-8260",
+        "metric": "sp-f1",
+        "score": 0.7692307692307693
+      },
+      {
+        "id": "T_CQ2-01-5161",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ2-01-5161",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ10-01-2695",
+        "metric": "answerset_f1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ10-01-8289",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ1-04-5015",
+        "metric": "sp-f1",
+        "score": 0.711864406779661
+      },
+      {
+        "id": "T_CQ7-01-5736",
+        "metric": "answerset_precision",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ3-01-5697",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ6-01-5736",
+        "metric": "sp-f1",
+        "score": 0.8750000000000001
+      },
+      {
+        "id": "T_CQ15-01-7506",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ1-02-2718",
+        "metric": "answerset_precision",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "T_CQ12-01-3397",
+        "metric": "answerset_f1",
+        "score": 0.3043691703485518
+      },
+      {
+        "id": "T_CQ2-01-5161",
+        "metric": "sp-f1",
+        "score": 0.7045454545454546
+      },
+      {
+        "id": "T_CQ11-01-5736",
+        "metric": "sp-f1",
+        "score": 0.8571428571428571
+      },
+      {
+        "id": "T_CQ8-01-8983",
+        "metric": "sp-f1",
+        "score": 0.6024096385542169
+      },
+      {
+        "id": "T_CQ3-01-5556",
+        "metric": "answerset_recall",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ3-01-5697",
+        "metric": "sp-f1",
+        "score": 0.7058823529411764
+      },
+      {
+        "id": "T_CQ12-01-7544",
+        "metric": "answerset_precision",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ17-01-1227",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ15-01-3277",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ10-01-8289",
+        "metric": "sp-f1",
+        "score": 0.7529411764705882
+      },
+      {
+        "id": "T_CQ3-01-5697",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ12-01-7544",
+        "metric": "query_execution",
+        "score": 1.0
+      },
+      {
+        "id": "T_CQ8-01-6786",
+        "metric": "query_exact_match",
+        "score": 0.0
+      },
+      {
+        "id": "T_CQ12-01-5016",
+        "metric": "answerset_recall",
+        "score": 0.14765489287782282
+      }
+    ]
+  }
+]

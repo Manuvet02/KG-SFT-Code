@@ -7,7 +7,6 @@ GRAPHDB_ENDPOINT = os.getenv("GRAPHDB_ENDPOINT", "http://localhost:7200/reposito
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://openrouter.ai/api/v1")
 MODEL = os.getenv("MODEL", "openrouter/free")
-MODEL_LOCAL = os.getenv("MODEL_LOCAL", "unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_M")
 
 # Configura i path di importazione
 APP_DIR = os.path.dirname(os.path.abspath(__file__))  # backEnd/app

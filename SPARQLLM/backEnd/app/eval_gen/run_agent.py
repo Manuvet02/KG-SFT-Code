@@ -79,8 +79,12 @@ def run_all(
             print(f"[run_agent] resuming: {len(already_done)} already done in {runs_path}")
 
     print("[run_agent] initializing SparqLLMAgent ...")
-    agent = SparqLLMAgent()
-    print("[run_agent] agent ready")
+    try:
+        agent = SparqLLMAgent()
+        print("[run_agent] agent ready")
+    except Exception as e:
+        print(f"Errore nell'inizializzazione dell'agente: {e}")
+        return
 
     todo = [inst for inst in groundings if inst["id"] not in already_done]
     print(f"[run_agent] {len(todo)}/{len(groundings)} to process")

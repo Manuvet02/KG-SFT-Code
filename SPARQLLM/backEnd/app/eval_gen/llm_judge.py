@@ -175,7 +175,7 @@ def summarize(results: list[dict]) -> dict:
 
 
 async def main():
-    from mcp.openrouter_client import ask_llm, LOCAL_MODEL , MODEL 
+    from mcp.openrouter_client import ask_llm , MODEL 
 
     print(f"[llm_judge] using model: {MODEL}")
     runs = load_jsonl("agent_runs.jsonl")
@@ -195,9 +195,6 @@ async def main():
         json.dump(summary, f, indent=2)
 
     print(f"\n[llm_judge] {len(all_results)}/{len(runs)} judged -> {out_path}")
-    print("[llm_judge] summary (mean across all judged instances):")
-    for k, v in summary.items():
-        print(f"  {k}: {v:.3f}" if k != "n" else f"  n: {v}")
 
 
 if __name__ == "__main__":
